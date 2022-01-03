@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item android:title="Select"
+        android:id="@+id/select"
+        />
+
+    <item android:title="Save"
+        android:id="@+id/save"
+        />
+
+    <item android:title="Search"
+        android:id="@+id/search"
+        />
+
+    <item android:title="Share"
+        android:id="@+id/share"
+        />
+</menu>
