@@ -1,5 +1,6 @@
 package com.example.sevenstars;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -40,7 +41,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.i1.setImageResource(getterSetter.getImage());
         holder.t1.setText(getterSetter.getName());
         holder.t2.setText(getterSetter.getType());
-//        holder.t3.setText(getterSetter.getAddress());
+        holder.t3.setText(getterSetter.getKey_People());
+        holder.t5.setText(getterSetter.getAddress());
     }
 
     @Override
@@ -49,7 +51,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView t1, t2, t3, t4,select;
+        TextView t1, t2, t3, t4,t5;
+        Button select,remind;
         ImageView i1,drop_menu;
         private final Context context;
 
@@ -59,10 +62,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             super(itemView);
             t1 = itemView.findViewById(R.id.name);
             t2 = itemView.findViewById(R.id.type);
-          //  t3 = itemView.findViewById(R.id.address);
+            t3 = itemView.findViewById(R.id.key_people_view);
+            t4=itemView.findViewById(R.id.volunteers_view);
+            t5=itemView.findViewById(R.id.address_view);
+
             select=itemView.findViewById(R.id.select);
+            remind=itemView.findViewById(R.id.remind);
             i1 = itemView.findViewById(R.id.image1);
             drop_menu=itemView.findViewById(R.id.menu);
+            context = itemView.getContext();
 
             drop_menu.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -71,29 +79,28 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                     p.getMenuInflater().inflate(R.menu.menu,p.getMenu());
 
                     p.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @SuppressLint("NonConstantResourceId")
                         @Override
                         public boolean onMenuItemClick(MenuItem item) {
-                          //  Toast.makeText(v.getContext(), "You clicked "+item, Toast.LENGTH_SHORT).show();
+                            String name=t1.getText().toString();
+                            String chairman=t3.getText().toString();
+                            String address = t5.getText().toString();
+                            final Intent intent;
+                            switch (item.getItemId()){
+                                case R.id.select:
+                                    Toast.makeText(v.getContext(), "Select is clicked", Toast.LENGTH_SHORT).show();
+                                    intent=new Intent(v.getContext(),Details.class);
+                                    intent.putExtra("Name",name);
+                                    intent.putExtra("Chairman",chairman);
+                                    intent.putExtra("Address",address);
+                                    context.startActivity(intent);
+                                    break;
 
-                            switch (getAdapterPosition()){
-                                case 0:
-
-                                    String click=item.getTitle().toString();
-                                    int click1=item.getItemId();
-
-                                    if (item.getItemId()==1){
-                                     //   Toast.makeText(v.getContext(), "Checking out", Toast.LENGTH_SHORT).show();
-                                    }
-                                    else {
-                                        //Toast.makeText(v.getContext(), "Check message"+click, Toast.LENGTH_SHORT).show();
-                                    }
-
-                                   break;
-
-                                case 1:
-                                    Toast.makeText(v.getContext(), "check case 2"+item, Toast.LENGTH_SHORT).show();
-
+                                case R.id.save:
+                                    Toast.makeText(v.getContext(), "Save is clicked", Toast.LENGTH_SHORT).show();
+                                    break;
                             }
+
                             return true;
                         }
                     });
@@ -101,97 +108,34 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 }
             });
 
-
-
-
-           // select=itemView.findViewById(R.id.select);
-
-            context = itemView.getContext();
-
-
-             select.setOnClickListener(new View.OnClickListener() {
+            select.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     final Intent intent;
-                    String Name=t1.getText().toString();
-                    String Type = t2.getText().toString();
+                    String Name = t1.getText().toString();
+                    String chairman=t3.getText().toString();
+                    String address = t5.getText().toString();
 
-                    switch (getAdapterPosition()){
-                        case  0:
+                    intent=new Intent(context,Details.class);
+                    intent.putExtra("Name",Name);
+                    intent.putExtra("Chairman",chairman);
+                    intent.putExtra("Address",address);
 
-                            intent=new Intent(context,Details.class);
-                            intent.putExtra("Name",Name);
-                            intent.putExtra("Type",Type);
-
-
-                            break;
-
-                        case 1:
-
-                           intent=new Intent(context,Details.class);
-                           intent.putExtra("Name",Name);
-                           intent.putExtra("Type",Type);
-
-                           break;
-
-                        case 2:
-                            intent=new Intent(context,Details.class);
-                            intent.putExtra("Name",Name);
-                            intent.putExtra("Type",Type);
-
-                            break;
-
-                        case 3:
-                            intent=new Intent(context,Details.class);
-                            intent.putExtra("Name",Name);
-                            intent.putExtra("Type",Type);
-
-                            break;
-//
-                        case 4:
-                            intent=new Intent(context,Details.class);
-                            intent.putExtra("Name",Name);
-                            intent.putExtra("Type",Type);
-                            break;
-
-                        case 5:
-                            intent=new Intent(context,Details.class);
-                            intent.putExtra("Name",Name);
-                            intent.putExtra("Type",Type);
-                            break;
-
-                        case 6:
-                            intent=new Intent(context,Details.class);
-                            intent.putExtra("Name",Name);
-                            intent.putExtra("Type",Type);
-                            break;
-
-                        case 7:
-                            intent=new Intent(context,Details.class);
-                            intent.putExtra("Name",Name);
-                            intent.putExtra("Type",Type);
-                            break;
-
-                        case 8:
-                            intent=new Intent(context,Details.class);
-                            intent.putExtra("Name",Name);
-                            intent.putExtra("Type",Type);
-                            break;
-
-                        case 9:
-                            intent=new Intent(context,Details.class);
-                            intent.putExtra("Name",Name);
-                            intent.putExtra("Type",Type);
-                            break;
-
-                            default:
-                            System.out.println("Unexpected value " + getAdapterPosition());
-                          throw new IllegalArgumentException("Unexpected value: " + getAdapterPosition());
-
-                    }
                     context.startActivity(intent);
                 }
+             });
 
+             remind.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     final Intent intent1;
+                     String new_name=t1.getText().toString();
+                     intent1=new Intent(context,My_wishlist.class);
+                     intent1.putExtra("new",new_name);
+                     context.startActivity(intent1);
+
+                     Toast.makeText(v.getContext(), "Added to wishlist", Toast.LENGTH_SHORT).show();
+                 }
              });
         }
 

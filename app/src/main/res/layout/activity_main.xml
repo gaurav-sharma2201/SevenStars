@@ -6,32 +6,122 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <androidx.cardview.widget.CardView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:backgroundTint="@color/Light_Gray"
-       android:layout_marginTop="20dp"
-       android:background="@color/Light_Gray"
-       app:cardCornerRadius="30dp"
-       android:id="@+id/card1"
-       >
-
-      <AutoCompleteTextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="Search"
-          android:background="@color/Light_Gray"
-          android:id="@+id/SearchBox"/>
-   </androidx.cardview.widget.CardView>
+    <RelativeLayout
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Orange">
 
 
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/recycler1"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_below="@id/card1"
-       android:layout_marginTop="20dp"
-       />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="30dp">
+
+            <ImageView
+                android:id="@+id/profileimage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@id/card"
+            android:text="Hello" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hello"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@id/card"
+
+            />
+
+        <TextView
+            android:id="@+id/my_wishlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/sign_out"
+            android:layout_alignBottom="@id/sign_out"
+            android:layout_toStartOf="@id/sign_out"
+            android:gravity="center_vertical"
+            android:text="My Wishlist"
+            android:textColor="@color/white" />
+
+
+        <Button
+            android:id="@+id/sign_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="@color/Orange"
+            android:ellipsize="start"
+            android:text="Sign out"
+            android:textColor="@color/white"
+            android:textSize="8sp"
+            app:iconSize="10dp" />
+
+
+        <RelativeLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toStartOf="@id/select1"
+                app:cardCornerRadius="30dp"
+                android:layout_alignBottom="@id/select1"
+                app:strokeColor="@color/glowing_blue"
+                app:strokeWidth="2dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/SearchBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:hint="Search" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <Button
+                android:id="@+id/select1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Select"
+                android:textColor="@color/white"
+                />
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/recycler"
+        android:layout_marginTop="20dp" />
 
 
 </RelativeLayout>

@@ -49,70 +49,102 @@
             android:layout_marginTop="10dp"
             app:srcCompat="@drawable/ic_baseline_more_vert_24" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/logo"
-        android:maxLines="3"
-        android:id="@+id/more_info"
-        />
-
         <ImageView
             android:id="@+id/image1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/more_info"
-            android:layout_above="@+id/table1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/key_people_view"
+            android:layout_below="@id/type"
             android:scaleType="fitStart" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginBottom="30dp"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/table1"
+        <TextView
+            android:id="@+id/key_people_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/like"
+            android:text="Key_people"
+            android:visibility="gone"/>
 
-        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/key_people_view"
+            android:id="@+id/volunteers_view"
+            android:text="Volunteers"
+            android:layout_above="@id/select"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/address_view"
+            android:text="Address"
+            android:layout_toEndOf="@id/volunteers_view"
+            android:layout_above="@id/select"
+            android:visibility="gone"
+            />
+
 
         <ImageView
             android:id="@+id/like"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/Orange"
+            android:layout_alignTop="@id/select"
+            android:layout_alignBottom="@id/select"
             android:src="@drawable/ic_baseline_thumb_up_24" />
 
-        <TextView
+        <Button
             android:id="@+id/select"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_weight="2"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@id/like"
+            android:backgroundTint="@color/white"
             android:text="Select"
-            android:background="@color/Orange"
-            android:textSize="20sp" />
+            android:textColor="@color/black" />
 
         <ImageView
+            android:id="@+id/wishlist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:background="@color/Orange"
+            android:layout_alignTop="@id/remind"
+            android:layout_alignBottom="@id/remind"
+            android:layout_toEndOf="@id/select"
             android:src="@drawable/ic_baseline_watch_later_24" />
 
-        <TextView
+        <Button
             android:id="@+id/remind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@id/wishlist"
+            android:backgroundTint="@color/white"
             android:text="Wishlist"
-            android:background="@color/Orange"
-            android:textSize="20sp" />
+            android:textColor="@color/black" />
 
+        <TextView
+            android:id="@+id/read_more_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/remind"
+            android:layout_alignBottom="@id/remind"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@id/remind"
+            android:gravity="center_vertical"
+            android:text="Read More" />
 
+        <ImageView
+            android:id="@+id/read_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/remind"
+            android:layout_alignBottom="@id/remind"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/read_more_text"
+            android:src="@drawable/ic_baseline_read_more_24" />
 
-
-
-    </TableRow>
 
     </RelativeLayout>
 

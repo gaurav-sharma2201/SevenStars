@@ -4,17 +4,131 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_200"
-    android:fadingEdge="horizontal"
     tools:context=".Details">
 
 
-    <Button
-        android:id="@+id/donate"
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Trust Name"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/key_people_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:backgroundTint="@color/material_on_surface_stroke"
-        android:text="Donate"
-        app:cornerRadius="20dp" />
+        android:layout_below="@id/Name"
+        android:layout_marginTop="20dp"
+        android:text="Key People"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/key_people_names"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/key_people_text"
+        android:text="Chairman"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/volunteers_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/key_people_names"
+        android:layout_marginTop="20dp"
+        android:text="Volunteers" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gaurav, Abhishek, Praveen"
+        android:layout_below="@id/volunteers_text"
+        android:id="@+id/volunteers_names"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/volunteers_names"
+        android:id="@+id/address_text"
+        />
+
+    <TextView
+        android:id="@+id/address_in_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/address_text"
+        android:text="Ambedkar Street, Byatarayanapura, Airport Road
+Bangalore, Karnataka 560092
+India" />
+
+
+    <TextView
+        android:id="@+id/donated_by"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/address_in_details"
+        android:layout_marginTop="20dp"
+        android:text="Donated by"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/donor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/donated_by"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/donor"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Please enter amount"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/INR001"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/amount"
+        android:ems="5"
+        android:inputType="number" />
+
+    <com.google.android.material.card.MaterialCardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="30dp"
+        app:strokeColor="@color/Orange"
+        app:strokeWidth="5dp">
+
+        <TextView
+            android:id="@+id/donate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Donate"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
 </RelativeLayout>
