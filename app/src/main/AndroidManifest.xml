@@ -13,9 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SevenStars">
         <activity
-            android:name=".Go_to_website"
-            android:exported="true" />
-        <activity
             android:name=".Read_more"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar"/>
