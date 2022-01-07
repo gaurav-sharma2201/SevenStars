@@ -132,16 +132,98 @@ public class MainActivity extends AppCompatActivity {
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        button(adapterView);
+                        button(adapterView,getData());
                     }
                 });
 
             }
 
-            private void button(String adapterView) {
-                Intent intent=new Intent(getApplicationContext(),Details.class);
+            private void button(String adapterView, ArrayList data) {
+                if (adapterView.matches("Parvathi Charitable Trust")){
+                    String key="Chairman 1";
+                    String address="Ambedkar Street, Byatarayanapura, Airport Road,Bangalore, Karnataka 560092";
+                    Intent intent=new Intent(MainActivity.this,Details.class);
                     intent.putExtra("Name",adapterView);
+                    intent.putExtra("Chairman",key);
+                    intent.putExtra("Address",address);
                     startActivity(intent);
+                }else if (adapterView.matches("Saanthvana Seva")){
+                    String key="Chairman 2";
+                    String address="#509 Samarpan. E A road. Ideal homes society Near Gopalan arcade mall, RR Nagar";
+                    Intent intent=new Intent(MainActivity.this,Details.class);
+                    intent.putExtra("Name",adapterView);
+                    intent.putExtra("Chairman",key);
+                    intent.putExtra("Address",address);
+                    startActivity(intent);
+                }else if (adapterView.matches("The Association of People with disability")){
+                    String key="Chairman 3";
+                    String address="6th Cross Road, Horamavu Agara Road, Off, Hutchins Rd, St Thomas Town, Lingarajapuram";
+                    Intent intent=new Intent(MainActivity.this,Details.class);
+                    intent.putExtra("Name",adapterView);
+                    intent.putExtra("Chairman",key);
+                    intent.putExtra("Address",address);
+                    startActivity(intent);
+                }else if (adapterView.matches("Samarthanam Trust for the Disabled")){
+                    String key="Chairman 4";
+                    String address="16th Main Road, 15th Cross Rd, Sector 4, HSR Layout";
+                    Intent intent=new Intent(MainActivity.this,Details.class);
+                    intent.putExtra("Name",adapterView);
+                    intent.putExtra("Chairman",key);
+                    intent.putExtra("Address",address);
+                    startActivity(intent);
+                }else if (adapterView.matches("Vathsalya Charitable Trust")){
+                    String key="Chairman 5";
+                    String address="717, 5th Cross Rd, HRBR Layout 1st Block, HRBR Layout, Kalyan Nagar";
+                    Intent intent=new Intent(MainActivity.this,Details.class);
+                    intent.putExtra("Name",adapterView);
+                    intent.putExtra("Chairman",key);
+                    intent.putExtra("Address",address);
+                    startActivity(intent);
+                }else if (adapterView.matches("Jeevana Jyothi Charitable Trust")){
+                    String key="Chairman 6";
+                    String address="No-28/1,10th cross, ashirwad colony, Bank Avenue, Horamavu Banaswadi";
+                    Intent intent=new Intent(MainActivity.this,Details.class);
+                    intent.putExtra("Name",adapterView);
+                    intent.putExtra("Chairman",key);
+                    intent.putExtra("Address",address);
+                    startActivity(intent);
+                }else if (adapterView.matches("New Mighty Grace Charitable Trust")){
+                    String key="Chairman 7";
+                    String address="No.35, 244/1, Munivenkatappa Layout, Horamavu Main Rd, Kalkere";
+                    Intent intent=new Intent(MainActivity.this,Details.class);
+                    intent.putExtra("Name",adapterView);
+                    intent.putExtra("Chairman",key);
+                    intent.putExtra("Address",address);
+                    startActivity(intent);
+                }else if (adapterView.matches("Om Shakti Mahila Charitable Trust")){
+                    String key="Chairman 7";
+                    String address="No. 21,sharadamma building, sampangi ramaiah layout K.G. halli";
+                    Intent intent=new Intent(MainActivity.this,Details.class);
+                    intent.putExtra("Name",adapterView);
+                    intent.putExtra("Chairman",key);
+                    intent.putExtra("Address",address);
+                    startActivity(intent);
+                }else if (adapterView.matches("CARE SHELTER")){
+                    String key="Chairman 9";
+                    String address="39,19th Main, 38th Cross Rd, 5th Block, Prakruthi Layout";
+                    Intent intent=new Intent(MainActivity.this,Details.class);
+                    intent.putExtra("Name",adapterView);
+                    intent.putExtra("Chairman",key);
+                    intent.putExtra("Address",address);
+                    startActivity(intent);
+                }else if (adapterView.matches("REACHING HAND")){
+                    String key="Chairman 10";
+                    String address=" 1st Floor, 44, Nehru Rd, AravindNagar, Yadava Layout, St Thomas Town, Kacharakanahalli";
+                    Intent intent=new Intent(MainActivity.this,Details.class);
+                    intent.putExtra("Name",adapterView);
+                    intent.putExtra("Chairman",key);
+                    intent.putExtra("Address",address);
+                    startActivity(intent);
+                }
+//                data=new ArrayList();
+//                Intent intent=new Intent(MainActivity.this,Details.class);
+//                intent.putExtra("data",data);
+//                startActivity(intent);
             }
         });
 
@@ -189,7 +271,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     GetterSetter gs1=new GetterSetter();
-    gs1.setImage(R.drawable.parvathi);
+    gs1.setImage(R.drawable.back1);
     gs1.setName("Parvathi Charitable Trust");
     gs1.setKey_People("Chairman 1");
     gs1.setType("Old Age Home\n" +
@@ -212,6 +294,7 @@ public class MainActivity extends AppCompatActivity {
 
         gs1=new GetterSetter();
         gs1.setImage(R.drawable.apd);
+        gs1.setKey_People("Chairman 3");
         gs1.setName("The Association of People with disability");
         gs1.setType("Physically disabled\n"+
                 "Early Intervention\n"+
@@ -223,6 +306,7 @@ public class MainActivity extends AppCompatActivity {
 
         gs1=new GetterSetter();
         gs1.setImage(R.drawable.samarthanam);
+        gs1.setKey_People("Chairman 4");
         gs1.setName("Samarthanam Trust for the Disabled");
         gs1.setType("Education\n"+
                 "Livelihood\n"+
@@ -234,6 +318,7 @@ public class MainActivity extends AppCompatActivity {
 
         gs1=new GetterSetter();
         gs1.setImage(R.drawable.vathsalya);
+        gs1.setKey_People("Chairman 5");
         gs1.setName("Vathsalya Charitable Trust");
         gs1.setType("Nutrition\n"+ "Education\n"+"Child Labour\n"+"Girl Empowerment");
         gs1.setAddress("717, 5th Cross Rd, HRBR Layout 1st Block, HRBR Layout, Kalyan Nagar");
@@ -241,6 +326,7 @@ public class MainActivity extends AppCompatActivity {
 
         gs1=new GetterSetter();
         gs1.setImage(R.drawable.jeevana_jyothi);
+        gs1.setKey_People("Chairman 6");
         gs1.setName("Jeevana Jyothi Charitable Trust");
         gs1.setType(" A home for the homeless\n" +
                 " Food for the hungry\n" +
@@ -251,6 +337,7 @@ public class MainActivity extends AppCompatActivity {
 
         gs1=new GetterSetter();
         gs1.setImage(R.drawable.new_mighty);
+        gs1.setKey_People("Chairman 7");
         gs1.setName("New Mighty Grace Charitable Trust");
         gs1.setType("Support to Underprivileged children\n" +
                 "Youth Women & Disabled");
@@ -259,6 +346,7 @@ public class MainActivity extends AppCompatActivity {
 
         gs1=new GetterSetter();
         gs1.setImage(R.drawable.om_shakthi);
+        gs1.setKey_People("Chairman 8");
         gs1.setName("Om Shakti Mahila Charitable Trust");
         gs1.setType("Orphanage\n" +
                 " Education and Day Care\n" +
@@ -271,6 +359,7 @@ public class MainActivity extends AppCompatActivity {
 
         gs1=new GetterSetter();
         gs1.setImage(R.drawable.care_shelter);
+        gs1.setKey_People("Chairman 9");
         gs1.setName("CARE SHELTER");
         gs1.setType("Old aged\n" +
                 "Disabled people");
@@ -279,6 +368,7 @@ public class MainActivity extends AppCompatActivity {
 
         gs1=new GetterSetter();
         gs1.setImage(R.drawable.charity1);
+        gs1.setKey_People("Chairman 10");
         gs1.setName("REACHING HAND");
         gs1.setType("Education, Health, and sustainable Livelihood Development");
         gs1.setAddress("1st Floor, 44, Nehru Rd, AravindNagar, Yadava Layout, St Thomas Town, Kacharakanahalli");

@@ -1,5 +1,6 @@
 package com.example.sevenstars;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+
 
     private ArrayList<Wishlist_getter_setter> wishlistGetterSetterArrayList;
 
@@ -45,8 +49,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-
             Name=itemView.findViewById(R.id.t6);
+            final Intent intent;
+
+            intent=new Intent();
+            String next=intent.getStringExtra("new");
+            Name.setText(next);
+
         }
     }
 }

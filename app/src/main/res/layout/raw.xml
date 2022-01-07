@@ -55,7 +55,7 @@
             android:layout_height="match_parent"
             android:layout_above="@id/key_people_view"
             android:layout_below="@id/type"
-            android:scaleType="fitStart" />
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/key_people_view"
@@ -96,6 +96,7 @@
 
         <Button
             android:id="@+id/select"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -104,33 +105,15 @@
             android:text="Select"
             android:textColor="@color/black" />
 
-        <ImageView
-            android:id="@+id/wishlist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/remind"
-            android:layout_alignBottom="@id/remind"
-            android:layout_toEndOf="@id/select"
-            android:src="@drawable/ic_baseline_watch_later_24" />
-
-        <Button
-            android:id="@+id/remind"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@id/wishlist"
-            android:backgroundTint="@color/white"
-            android:text="Wishlist"
-            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/read_more_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/remind"
-            android:layout_alignBottom="@id/remind"
+            android:layout_alignTop="@id/select"
+            android:layout_alignBottom="@id/select"
             android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@id/remind"
+            android:layout_toStartOf="@id/read_more"
             android:gravity="center_vertical"
             android:text="Read More" />
 
@@ -138,11 +121,10 @@
             android:id="@+id/read_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/remind"
-            android:layout_alignBottom="@id/remind"
-            android:layout_alignParentBottom="true"
+            android:layout_alignTop="@id/read_more_text"
+            android:layout_alignBottom="@id/read_more_text"
             android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@id/read_more_text"
+            android:layout_alignParentBottom="true"
             android:src="@drawable/ic_baseline_read_more_24" />
 
 

@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,7 @@ import org.json.JSONObject;
 
 public class Details extends AppCompatActivity implements PaymentResultListener {
     TextView Name, Key_people_names, Volunteers_names, Address;
-    EditText INR1;
+    EditText INR1,donor;
     private static final String TAG = MainActivity.class.getSimpleName();
     private FirebaseFirestore db;
     String trust_name,Rupees;
@@ -49,6 +50,7 @@ public class Details extends AppCompatActivity implements PaymentResultListener 
         Volunteers_names = findViewById(R.id.volunteers_names);
         Address = findViewById(R.id.address_in_details);
         INR1= findViewById(R.id.INR001);
+        donor=findViewById(R.id.donor);
 
 
         TextView donate = (TextView) findViewById(R.id.donate);
@@ -72,8 +74,14 @@ public class Details extends AppCompatActivity implements PaymentResultListener 
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                JMD("100");
-                Toast.makeText(getApplicationContext(), "Check name "+trust_name, Toast.LENGTH_LONG).show();
+                String amount=INR1.getText().toString();
+                String name=donor.getText().toString();
+                if (TextUtils.isEmpty(amount) || TextUtils.isEmpty(name)){
+                    Toast.makeText(Details.this, "Please fill Name and Amount", Toast.LENGTH_SHORT).show();
+                }else {
+                    JMD("100");
+                    Toast.makeText(getApplicationContext(), "Check name "+trust_name, Toast.LENGTH_LONG).show();
+                }
             }
         });
 

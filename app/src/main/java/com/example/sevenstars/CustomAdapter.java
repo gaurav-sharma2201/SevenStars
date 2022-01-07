@@ -43,6 +43,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.t2.setText(getterSetter.getType());
         holder.t3.setText(getterSetter.getKey_People());
         holder.t5.setText(getterSetter.getAddress());
+
     }
 
     @Override
@@ -51,7 +52,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView t1, t2, t3, t4,t5;
+        TextView t1, t2, t3, t4,t5,read_more;
         Button select,remind;
         ImageView i1,drop_menu;
         private final Context context;
@@ -65,9 +66,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             t3 = itemView.findViewById(R.id.key_people_view);
             t4=itemView.findViewById(R.id.volunteers_view);
             t5=itemView.findViewById(R.id.address_view);
-
             select=itemView.findViewById(R.id.select);
-            remind=itemView.findViewById(R.id.remind);
+            read_more=itemView.findViewById(R.id.read_more_text);
             i1 = itemView.findViewById(R.id.image1);
             drop_menu=itemView.findViewById(R.id.menu);
             context = itemView.getContext();
@@ -85,20 +85,31 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                             String name=t1.getText().toString();
                             String chairman=t3.getText().toString();
                             String address = t5.getText().toString();
+
                             final Intent intent;
+
                             switch (item.getItemId()){
-                                case R.id.select:
-                                    Toast.makeText(v.getContext(), "Select is clicked", Toast.LENGTH_SHORT).show();
-                                    intent=new Intent(v.getContext(),Details.class);
-                                    intent.putExtra("Name",name);
-                                    intent.putExtra("Chairman",chairman);
-                                    intent.putExtra("Address",address);
-                                    context.startActivity(intent);
+
+                                case R.id.share01:
+
+                                    if (name.matches("Om Shakti Mahila Charitable Trust")){
+                                        intent=new Intent(Intent.ACTION_SEND);
+                                        intent.putExtra(Intent.EXTRA_TEXT,"Let's go here on New Year\n"+name+"\n http://www.omshakthimahilacharitabletrust.com/ \n");
+                                        intent.setType("text/plain");
+                                        context.startActivity(Intent.createChooser(intent,"Send to"));
+                                    }else {
+                                        intent=new Intent(Intent.ACTION_SEND);
+                                        intent.putExtra(Intent.EXTRA_TEXT,"Let's go here on New Year\n"+name);
+                                        intent.setType("text/plain");
+                                        context.startActivity(Intent.createChooser(intent,"Send to"));
+
+                                    }
                                     break;
 
-                                case R.id.save:
-                                    Toast.makeText(v.getContext(), "Save is clicked", Toast.LENGTH_SHORT).show();
-                                    break;
+                                case R.id.add:
+                                    Toast.makeText(v.getContext(), "Adding to your Wish List", Toast.LENGTH_LONG).show();
+
+
                             }
 
                             return true;
@@ -107,6 +118,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                     p.show();
                 }
             });
+
+
 
             select.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -125,18 +138,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 }
              });
 
-             remind.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View v) {
-                     final Intent intent1;
-                     String new_name=t1.getText().toString();
-                     intent1=new Intent(context,My_wishlist.class);
-                     intent1.putExtra("new",new_name);
-                     context.startActivity(intent1);
+            read_more.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(context,Read_more.class);
+                    context.startActivity(intent);
+                }
+            });
 
-                     Toast.makeText(v.getContext(), "Added to wishlist", Toast.LENGTH_SHORT).show();
-                 }
-             });
+
+
+
         }
 
     }

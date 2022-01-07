@@ -2,19 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     >
 
-    <item android:title="Select"
-        android:id="@+id/select"
-        />
-
-    <item android:title="Save"
-        android:id="@+id/save"
-        />
-
-    <item android:title="Search"
-        android:id="@+id/search"
-        />
-
     <item android:title="Share"
-        android:id="@+id/share"
+        android:id="@+id/share01"
+        />
+
+    <item android:title="Add to Wish List"
+        android:id="@+id/add"
         />
 </menu>
