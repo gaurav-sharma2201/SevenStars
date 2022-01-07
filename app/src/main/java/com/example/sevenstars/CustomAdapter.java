@@ -3,6 +3,7 @@ package com.example.sevenstars;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
     private ArrayList<GetterSetter> getterSetterArrayList;
@@ -53,7 +55,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView t1, t2, t3, t4,t5,read_more;
-        Button select,remind;
+        Button select;
         ImageView i1,drop_menu;
         private final Context context;
 
@@ -107,12 +109,21 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                                     break;
 
                                 case R.id.add:
+                                    intent=new Intent(v.getContext(),My_wishlist.class);
+                                    intent.putExtra("get_name",name);
+                                    context.startActivity(intent);
                                     Toast.makeText(v.getContext(), "Adding to your Wish List", Toast.LENGTH_LONG).show();
+                                    getdata();
 
 
                             }
 
                             return true;
+                        }
+
+                        private void getdata() {
+
+
                         }
                     });
                     p.show();
