@@ -3,6 +3,7 @@ package com.example.sevenstars;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -24,6 +25,7 @@ import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
     private ArrayList<GetterSetter> getterSetterArrayList;
+    SQLiteDatabase sqLiteDatabase;
 
     public CustomAdapter(ArrayList<GetterSetter> getterSetterArrayList1) {
         this.getterSetterArrayList = getterSetterArrayList1;
@@ -33,7 +35,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.raw, parent, false);
-
         return new MyViewHolder(itemView);
     }
 
@@ -81,49 +82,37 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                     p.getMenuInflater().inflate(R.menu.menu,p.getMenu());
 
                     p.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
+
                         @SuppressLint("NonConstantResourceId")
                         @Override
                         public boolean onMenuItemClick(MenuItem item) {
                             String name=t1.getText().toString();
-                            String chairman=t3.getText().toString();
-                            String address = t5.getText().toString();
 
                             final Intent intent;
 
-                            switch (item.getItemId()){
+                            switch (item.getItemId()) {
 
                                 case R.id.share01:
 
-                                    if (name.matches("Om Shakti Mahila Charitable Trust")){
-                                        intent=new Intent(Intent.ACTION_SEND);
-                                        intent.putExtra(Intent.EXTRA_TEXT,"Let's go here on New Year\n"+name+"\n http://www.omshakthimahilacharitabletrust.com/ \n");
+                                    if (name.matches("Om Shakti Mahila Charitable Trust")) {
+                                        intent = new Intent(Intent.ACTION_SEND);
+                                        intent.putExtra(Intent.EXTRA_TEXT, "Let's go here on New Year\n" + name + "\n http://www.omshakthimahilacharitabletrust.com/ \n");
                                         intent.setType("text/plain");
-                                        context.startActivity(Intent.createChooser(intent,"Send to"));
-                                    }else {
-                                        intent=new Intent(Intent.ACTION_SEND);
-                                        intent.putExtra(Intent.EXTRA_TEXT,"Let's go here on New Year\n"+name);
+                                        context.startActivity(Intent.createChooser(intent, "Send to"));
+                                    } else {
+                                        intent = new Intent(Intent.ACTION_SEND);
+                                        intent.putExtra(Intent.EXTRA_TEXT, "Let's go here on New Year\n" + name);
                                         intent.setType("text/plain");
-                                        context.startActivity(Intent.createChooser(intent,"Send to"));
+                                        context.startActivity(Intent.createChooser(intent, "Send to"));
 
                                     }
                                     break;
 
                                 case R.id.add:
-                                    intent=new Intent(v.getContext(),My_wishlist.class);
-                                    intent.putExtra("get_name",name);
-                                    context.startActivity(intent);
-                                    Toast.makeText(v.getContext(), "Adding to your Wish List", Toast.LENGTH_LONG).show();
-                                    getdata();
-
 
                             }
-
                             return true;
-                        }
-
-                        private void getdata() {
-
-
                         }
                     });
                     p.show();
@@ -156,13 +145,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                     context.startActivity(intent);
                 }
             });
-
-
-
-
         }
 
     }
+
+
 }
 
 

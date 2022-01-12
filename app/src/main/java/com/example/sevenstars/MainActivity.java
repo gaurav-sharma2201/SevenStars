@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     Button signout;
     ImageView profileimage;
     TextView username,my_wishlist;
+    ImageButton profile_button;
 
     @Override
     public void onBackPressed() {
@@ -61,14 +63,6 @@ public class MainActivity extends AppCompatActivity {
         username=findViewById(R.id.username);
         my_wishlist=findViewById(R.id.my_wishlist);
 
-        my_wishlist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,My_wishlist.class);
-                startActivity(intent);
-
-            }
-        });
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -100,6 +94,15 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.sign_out:
                         signout();
                 }
+            }
+        });
+
+        profile_button=findViewById(R.id.profile_button);
+
+        profile_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

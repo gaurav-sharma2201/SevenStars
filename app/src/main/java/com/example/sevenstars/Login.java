@@ -89,6 +89,7 @@ public class Login extends AppCompatActivity {
             }
         });
         SignInButton signInButton = findViewById(R.id.google);
+        Button New_Google=findViewById(R.id.google1);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -97,11 +98,11 @@ public class Login extends AppCompatActivity {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        signInButton.setOnClickListener(new View.OnClickListener() {
+        New_Google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()) {
-                    case R.id.google:
+                    case R.id.google1:
 
                         signin();
 
