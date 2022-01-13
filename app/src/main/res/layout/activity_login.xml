@@ -148,12 +148,6 @@
             android:layout_below="@id/text3"
             android:layout_centerHorizontal="true" />
 
-        <Button
-            android:id="@+id/google1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/google"
-            android:text="New Google" />
 
 
     </RelativeLayout>

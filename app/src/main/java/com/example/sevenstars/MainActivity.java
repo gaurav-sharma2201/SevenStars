@@ -42,10 +42,9 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     CustomAdapter customAdapter;
     GoogleSignInClient mGoogleSignInClient;
-    Button signout;
+    ImageButton signout;
     ImageView profileimage;
     TextView username,my_wishlist;
-    ImageButton profile_button;
 
     @Override
     public void onBackPressed() {
@@ -94,15 +93,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.sign_out:
                         signout();
                 }
-            }
-        });
-
-        profile_button=findViewById(R.id.profile_button);
-
-        profile_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
             }
         });
 
