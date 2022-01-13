@@ -110,6 +110,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                                     break;
 
                                 case R.id.add:
+                                    intent=new Intent(v.getContext(),WishList.class);
+                                    intent.putExtra("wish",name);
+                                    context.startActivity(intent);
 
                             }
                             return true;

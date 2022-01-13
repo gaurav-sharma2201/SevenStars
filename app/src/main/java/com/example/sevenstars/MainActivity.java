@@ -62,6 +62,14 @@ public class MainActivity extends AppCompatActivity {
         username=findViewById(R.id.username);
         my_wishlist=findViewById(R.id.my_wishlist);
 
+        my_wishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,WishList.class);
+                startActivity(intent);
+            }
+        });
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
