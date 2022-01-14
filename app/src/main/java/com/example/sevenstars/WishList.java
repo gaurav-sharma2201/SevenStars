@@ -91,6 +91,7 @@ public class WishList extends AppCompatActivity {
         LISTVIEW=findViewById(R.id.listview);
         b1=findViewById(R.id.b1);
         t1=findViewById(R.id.t1);
+        b2=findViewById(R.id.b2);
 
         Intent intent=getIntent();
         String name=intent.getStringExtra("wish");
