@@ -40,8 +40,8 @@ public class Details extends AppCompatActivity implements PaymentResultListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-
         Checkout.preload(getApplicationContext());
+
         db=FirebaseFirestore.getInstance();
 
 
