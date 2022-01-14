@@ -172,7 +172,7 @@ public class WishList extends AppCompatActivity {
         LISTVIEW.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(WishList.this, "Want to donate", Toast.LENGTH_SHORT).show();
+
             }
         });
 
