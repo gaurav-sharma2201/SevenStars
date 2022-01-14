@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WishList extends AppCompatActivity {
-    Button b1;
+    Button b1,b2;
     EditText ed1;
     TextView t1;
     SQLiteDatabase sqLiteDatabase;
@@ -52,6 +52,7 @@ public class WishList extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         ShowSQLiteDBdata();
+
     }
 
     @SuppressLint("Range")
@@ -75,6 +76,7 @@ public class WishList extends AppCompatActivity {
 
             listAdapter=new CustomListAdapter(WishList.this,ID_ARRAY,TITLE_ARRAY);
 
+            listAdapter.notifyDataSetChanged();
             LISTVIEW.setAdapter(listAdapter);
             cursor.close();
 
@@ -116,7 +118,7 @@ public class WishList extends AppCompatActivity {
             }
 
             private void SqliteDatabaseBuild() {
-                sqLiteDatabase=openOrCreateDatabase("WishListDataBase", Context.MODE_PRIVATE,null);
+               sqLiteDatabase=openOrCreateDatabase("WishListDataBase", Context.MODE_PRIVATE,null);
             }
 
             private void SqliteTableBuild() {
@@ -150,6 +152,15 @@ public class WishList extends AppCompatActivity {
             private void EmptyEditTextAfterInsert() {
                 ed1.getText().clear();
                 t1.setText("");
+            }
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1=new Intent(WishList.this,MainActivity.class);
+                startActivity(intent1);
+
             }
         });
 

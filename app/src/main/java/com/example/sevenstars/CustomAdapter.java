@@ -59,6 +59,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         Button select;
         ImageView i1,drop_menu;
         private final Context context;
+        SQLiteDatabase sqLiteDatabase;
 
 
 
@@ -117,9 +118,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                             }
                             return true;
                         }
+
+
                     });
                     p.show();
                 }
+
             });
 
 
