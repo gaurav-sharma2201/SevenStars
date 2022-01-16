@@ -61,14 +61,14 @@
         />
 
     <TextView
+        android:id="@+id/title"
+        style="@style/Theme.AppCompat.DayNight.DarkActionBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LET THERE BE"
         android:layout_below="@id/fbtn1"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        style="@style/Theme.AppCompat.DayNight.DarkActionBar"
-        android:id="@+id/title"/>
+        android:text="LET THERE BE"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -82,21 +82,17 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/description"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="40dp"
-        android:layout_below="@id/description">
+        android:layout_marginBottom="40dp">
 
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:textSize="16sp"
-        android:text="Donations are for those who deserve a better life. Charity is done by those whose desrve a better place. Android is a mobile operating system based on a modified version of the Linux kernel and other open source software, designed primarily for touchscreen mobile devices such as smartphones and tablets. Android is developed by a consortium of developers known as the Open Handset Alliance and commercially sponsored by Google. It was unveiled in November 2007, with the first commercial Android device, the HTC Dream, being launched in September 2008.
-
-It is free and open-source software; its source code is known as Android Open Source Project (AOSP), which is primarily licensed under the Apache License. However most Android devices ship with additional proprietary software pre-installed,[14] most notably Google Mobile Services (GMS)[15] which includes core apps such as Google Chrome, the digital distribution platform Google Play, and associated Google Play Services development platform.Android is a mobile operating system based on a modified version of the Linux kernel and other open source software, designed primarily for touchscreen mobile devices such as smartphones and tablets. Android is developed by a consortium of developers known as the Open Handset Alliance and commercially sponsored by Google. It was unveiled in November 2007, with the first commercial Android device, the HTC Dream, being launched in September 2008.
-
-It is free and open-source software; its source code is known as Android Open Source Project (AOSP), which is primarily licensed under the Apache License. However most Android devices ship with additional proprietary software pre-installed,[14] most notably Google Mobile Services (GMS)[15] which includes core apps such as Google Chrome, the digital distribution platform Google Play, and associated Google Play Services development platform."
-        android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This is sample text for giving read more on different trustees."
+            android:textSize="16sp"
+            android:id="@+id/sample"/>
 
     </ScrollView>
 

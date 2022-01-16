@@ -27,6 +27,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     private ArrayList<GetterSetter> getterSetterArrayList;
     SQLiteDatabase sqLiteDatabase;
 
+
     public CustomAdapter(ArrayList<GetterSetter> getterSetterArrayList1) {
         this.getterSetterArrayList = getterSetterArrayList1;
     }
@@ -59,7 +60,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         Button select;
         ImageView i1,drop_menu;
         private final Context context;
-        SQLiteDatabase sqLiteDatabase;
 
 
 
@@ -75,6 +75,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             i1 = itemView.findViewById(R.id.image1);
             drop_menu=itemView.findViewById(R.id.menu);
             context = itemView.getContext();
+
 
             drop_menu.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -115,11 +116,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                                     intent.putExtra("wish",name);
                                     context.startActivity(intent);
 
+
                             }
                             return true;
                         }
-
-
                     });
                     p.show();
                 }
@@ -155,9 +155,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         }
 
     }
-
-
 }
+
 
 
 

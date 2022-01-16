@@ -101,22 +101,21 @@ public class WishList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                SqliteDatabaseBuild();
+                    SqliteDatabaseBuild();
 
-                SqliteTableBuild();
+                    SqliteTableBuild();
 
-                CheckEditTextStatus();
+                    CheckEditTextStatus();
 
-                SqliteInsertData();
+                    SqliteInsertData();
 
-                EmptyEditTextAfterInsert();
+                    EmptyEditTextAfterInsert();
 
-                Intent intent1=new Intent(WishList.this,MainActivity.class);
-                startActivity(intent1);
+                    Intent intent1 = new Intent(WishList.this, MainActivity.class);
+                    startActivity(intent1);
 
-                Toast.makeText(WishList.this, "Wishlist Updated", Toast.LENGTH_SHORT).show();
-
-            }
+                    Toast.makeText(WishList.this, "Wishlist Updated", Toast.LENGTH_SHORT).show();
+                }
 
             private void SqliteDatabaseBuild() {
                sqLiteDatabase=openOrCreateDatabase("WishListDataBase", Context.MODE_PRIVATE,null);
@@ -172,6 +171,7 @@ public class WishList extends AppCompatActivity {
         LISTVIEW.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
 
             }
         });
