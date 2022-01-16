@@ -114,7 +114,8 @@ India" />
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         app:cardCornerRadius="30dp"
-        app:strokeColor="@color/Orange"
+        android:clickable="true"
+        android:outlineAmbientShadowColor="@color/black"
         app:strokeWidth="5dp">
 
         <TextView

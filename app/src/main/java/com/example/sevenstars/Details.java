@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -69,16 +70,26 @@ public class Details extends AppCompatActivity implements PaymentResultListener 
         //
 
 
-
-
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String amount=INR1.getText().toString();
                 String name=donor.getText().toString();
+                String gray="#808080";
+                int grayInt= Color.parseColor(gray);
+                String white="#ffffff";
+                int whiteInt=Color.parseColor(white);
+                String green="#05E177";
+                int greenInt=Color.parseColor(green);
+
                 if (TextUtils.isEmpty(amount) || TextUtils.isEmpty(name)){
+
+                    donate.setTextColor(whiteInt);
+                    donate.setBackgroundColor(grayInt);
                     Toast.makeText(Details.this, "Please fill Name and Amount", Toast.LENGTH_SHORT).show();
                 }else {
+                    donate.setBackgroundColor(greenInt);
+                    donate.setTextColor(whiteInt);
                     JMD("100");
                     Toast.makeText(getApplicationContext(), "Check name "+trust_name, Toast.LENGTH_LONG).show();
                 }
