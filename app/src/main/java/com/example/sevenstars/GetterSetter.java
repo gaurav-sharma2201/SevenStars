@@ -3,6 +3,18 @@ package com.example.sevenstars;
 import android.widget.Button;
 
 public class GetterSetter {
+    public GetterSetter(String name, String type, String key_People, String more_Info, String address, int image) {
+        Name = name;
+        Type = type;
+        Key_People = key_People;
+        More_Info = more_Info;
+        Address = address;
+        Image = image;
+    }
+
+    public GetterSetter() {
+
+    }
 
     public String getName() {
         return Name;
@@ -62,6 +74,7 @@ public class GetterSetter {
     }
 
     int Image;
+
 
 
 

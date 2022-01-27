@@ -1,138 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card1"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="20dp"
-    android:layout_margin="10dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    app:strokeWidth="2dp"
+    app:strokeColor="@color/fade_blue"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/logo" />
+        android:layout_height="wrap_content"
+        >
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
             android:layout_toStartOf="@id/menu"
-            android:layout_toEndOf="@id/logo"
-            android:paddingStart="10dp"
             android:text="Trust Name"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/name"
-            android:layout_toStartOf="@id/menu"
-            android:layout_toEndOf="@id/logo"
-            android:paddingStart="10dp"
-            android:text="TextView" />
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
+                android:layout_toStartOf="@id/menu"
+                android:text="TextView"
+                android:layout_below="@id/name"/>
+
 
         <ImageView
             android:id="@+id/menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignTop="@id/name"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+
+            <TextView
+                android:id="@+id/key_people_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/type"
+                android:text="Key_people"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/key_people_view"
+                android:id="@+id/volunteers_view"
+                android:text="Volunteers"
+                android:layout_below="@id/type"
+                android:visibility="gone"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/address_view"
+                android:text="Address"
+                android:layout_toEndOf="@id/volunteers_view"
+                android:layout_below="@id/type"
+                android:visibility="gone"
+                />
 
         <ImageView
             android:id="@+id/image1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/key_people_view"
+            android:layout_height="360dp"
             android:layout_below="@id/type"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitXY" />
 
-        <TextView
-            android:id="@+id/key_people_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/like"
-            android:text="Key_people"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/key_people_view"
-            android:id="@+id/volunteers_view"
-            android:text="Volunteers"
-            android:layout_above="@id/select"
-            android:visibility="gone"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/address_view"
-            android:text="Address"
-            android:layout_toEndOf="@id/volunteers_view"
-            android:layout_above="@id/select"
-            android:visibility="gone"
-            />
-
-
-        <ImageView
-            android:id="@+id/like"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/select"
-            android:layout_alignBottom="@id/select"
-            android:src="@drawable/ic_baseline_thumb_up_24" />
-
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/select"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@id/like"
-            android:backgroundTint="@color/white"
+            android:layout_below="@id/image1"
             android:text="Select"
-            android:textColor="@color/black" />
+            android:textColor="@color/Orange"
+            android:textStyle="bold"
+            app:iconTint="#323A6A"
+            app:icon="@drawable/ic_baseline_thumb_up_24"
+            android:layout_marginStart="5dp"
+            app:cornerRadius="10dp"
+            app:strokeColor="@color/Light_Gray" />
 
-
-        <TextView
-            android:id="@+id/read_more_text"
+        <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/select"
-            android:layout_alignBottom="@id/select"
-            android:layout_alignParentBottom="true"
-            android:layout_toStartOf="@id/read_more"
-            android:gravity="center_vertical"
-            android:text="Read More" />
-
-        <ImageView
-            android:id="@+id/read_more"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/read_more_text"
-            android:layout_alignBottom="@id/read_more_text"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_below="@id/image1"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/ic_baseline_read_more_24" />
+            android:text="Add to wishlist"
+            android:textAllCaps="false"
+            android:textColor="@color/Light_Pink"
+            android:id="@+id/wishlist"
+            app:iconTint="#323A6A"
+            app:icon="@drawable/ic_baseline_view_list_24"
+            />
 
 
     </RelativeLayout>
-
-
-
-</androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 
 

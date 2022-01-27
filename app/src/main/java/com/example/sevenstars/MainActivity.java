@@ -5,25 +5,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
+import android.animation.ArgbEvaluator;
 import android.content.Intent;
-import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.webkit.URLUtil;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.MediaController;
 import android.widget.SearchView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -32,36 +35,33 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.razorpay.Checkout;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
     RecyclerView recyclerView;
     CustomAdapter customAdapter;
     GoogleSignInClient mGoogleSignInClient;
-    ImageButton signout;
     ImageView profileimage;
-    TextView username,my_wishlist;
+    BottomNavigationView bottomNavigationView;
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finishAffinity();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView=findViewById(R.id.recycler1);
-        signout=findViewById(R.id.sign_out);
-        profileimage=findViewById(R.id.profileimage);
-        username=findViewById(R.id.username);
-        my_wishlist=findViewById(R.id.my_wishlist);
+        profileimage = findViewById(R.id.profileimage);
+        bottomNavigationView = findViewById(R.id.bottomNavView);
+        bottomNavigationView.setBackground(null);
+        //  signout=findViewById(R.id.sign_out);
 
+        Button my_wishlist=(Button)findViewById(R.id.my_wishlist);
         my_wishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,25 +87,15 @@ public class MainActivity extends AppCompatActivity {
             Uri personPhoto = account.getPhotoUrl();
 
             Glide.with(this).load(personPhoto).into(profileimage);
-            username.setText(personName);
-        }else {
-            Intent intent=getIntent();
-            String name=intent.getStringExtra("username");
-            username.setText(name);
+            //  username.setText(personName);
+        } else {
+//            Intent intent = getIntent();
+//            String name = intent.getStringExtra("username");
+//            username.setText(name);
         }
 
-        signout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()){
-                    case R.id.sign_out:
-                        signout();
-                }
-            }
-        });
 
-
-        List<String> TrustName=new ArrayList<>();
+        List<String> TrustName = new ArrayList<>();
         TrustName.add("Parvathi Charitable Trust");
         TrustName.add("Saanthvana Seva");
         TrustName.add("The Association of People with disability");
@@ -117,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         TrustName.add("CARE SHELTER");
         TrustName.add("REACHING HAND");
 
-        ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,TrustName);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item, TrustName);
         AutoCompleteTextView searchbox=findViewById(R.id.SearchBox);
         searchbox.setThreshold(1);
         searchbox.setAdapter(arrayAdapter);
@@ -129,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), adapterView, Toast.LENGTH_SHORT).show();
 
-                Button button=(Button) findViewById(R.id.select1);
+                ImageButton button=(ImageButton) findViewById(R.id.search_button);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -221,26 +211,8 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("Address",address);
                     startActivity(intent);
                 }
-//                data=new ArrayList();
-//                Intent intent=new Intent(MainActivity.this,Details.class);
-//                intent.putExtra("data",data);
-//                startActivity(intent);
             }
         });
-
-        searchbox.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-
 
         customAdapter=new CustomAdapter(getData());
 
@@ -249,6 +221,35 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(customAdapter);
 
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.home:
+
+
+                        Toast.makeText(MainActivity.this, "Home screen", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.account:
+                        Toast.makeText(MainActivity.this, "Account screen", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.help:
+                        Toast.makeText(MainActivity.this, "Help screen", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.logout:
+
+                        signout();
+                        break;
+
+                }
+
+                return false;
+            }
+        });
 
     }
 
@@ -266,13 +267,15 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    private ArrayList getData()
+
+    private ArrayList<GetterSetter> getData()
+
     {
     ArrayList<GetterSetter> gts=new ArrayList<>();
 
 
     GetterSetter gs1=new GetterSetter();
-    gs1.setImage(R.drawable.back1);
+    gs1.setImage(R.drawable.im1);
     gs1.setName("Parvathi Charitable Trust");
     gs1.setKey_People("Chairman 1");
     gs1.setType("Old Age Home\n" +
@@ -285,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
     gts.add(gs1);
 
          gs1=new GetterSetter();
-         gs1.setImage(R.drawable.saanthvana);
+         gs1.setImage(R.drawable.im2);
          gs1.setKey_People("Chairman 2");
          gs1.setName("Saanthvana Seva");
          gs1.setType("OLD-AGE HOME\n" +
@@ -294,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
          gts.add(gs1);
 
         gs1=new GetterSetter();
-        gs1.setImage(R.drawable.apd);
+        gs1.setImage(R.drawable.im3);
         gs1.setKey_People("Chairman 3");
         gs1.setName("The Association of People with disability");
         gs1.setType("Physically disabled\n"+
@@ -306,7 +309,7 @@ public class MainActivity extends AppCompatActivity {
         gts.add(gs1);
 
         gs1=new GetterSetter();
-        gs1.setImage(R.drawable.samarthanam);
+        gs1.setImage(R.drawable.im4);
         gs1.setKey_People("Chairman 4");
         gs1.setName("Samarthanam Trust for the Disabled");
         gs1.setType("Education\n"+
@@ -318,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
         gts.add(gs1);
 
         gs1=new GetterSetter();
-        gs1.setImage(R.drawable.vathsalya);
+        gs1.setImage(R.drawable.im5);
         gs1.setKey_People("Chairman 5");
         gs1.setName("Vathsalya Charitable Trust");
         gs1.setType("Nutrition\n"+ "Education\n"+"Child Labour\n"+"Girl Empowerment");
@@ -326,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
         gts.add(gs1);
 
         gs1=new GetterSetter();
-        gs1.setImage(R.drawable.jeevana_jyothi);
+        gs1.setImage(R.drawable.im6);
         gs1.setKey_People("Chairman 6");
         gs1.setName("Jeevana Jyothi Charitable Trust");
         gs1.setType(" A home for the homeless\n" +
@@ -337,7 +340,7 @@ public class MainActivity extends AppCompatActivity {
         gts.add(gs1);
 
         gs1=new GetterSetter();
-        gs1.setImage(R.drawable.new_mighty);
+        gs1.setImage(R.drawable.im7);
         gs1.setKey_People("Chairman 7");
         gs1.setName("New Mighty Grace Charitable Trust");
         gs1.setType("Support to Underprivileged children\n" +
@@ -346,7 +349,7 @@ public class MainActivity extends AppCompatActivity {
         gts.add(gs1);
 
         gs1=new GetterSetter();
-        gs1.setImage(R.drawable.om_shakthi);
+        gs1.setImage(R.drawable.im8);
         gs1.setKey_People("Chairman 8");
         gs1.setName("Om Shakti Mahila Charitable Trust");
         gs1.setType("Orphanage\n" +
@@ -359,7 +362,7 @@ public class MainActivity extends AppCompatActivity {
         gts.add(gs1);
 
         gs1=new GetterSetter();
-        gs1.setImage(R.drawable.care_shelter);
+        gs1.setImage(R.drawable.im9);
         gs1.setKey_People("Chairman 9");
         gs1.setName("CARE SHELTER");
         gs1.setType("Old aged\n" +
@@ -368,7 +371,7 @@ public class MainActivity extends AppCompatActivity {
         gts.add(gs1);
 
         gs1=new GetterSetter();
-        gs1.setImage(R.drawable.charity1);
+        gs1.setImage(R.drawable.im10);
         gs1.setKey_People("Chairman 10");
         gs1.setName("REACHING HAND");
         gs1.setType("Education, Health, and sustainable Livelihood Development");
@@ -377,4 +380,11 @@ public class MainActivity extends AppCompatActivity {
 
         return gts;
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
+    }
+
 }

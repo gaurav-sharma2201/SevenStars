@@ -4,70 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Light_Gray"
     tools:context=".Details">
 
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Trust Name"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/Name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="Trust Name"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/key_people_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Name"
+            android:layout_marginTop="20dp"
+            android:text="Key People"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/key_people_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Name"
-        android:layout_marginTop="20dp"
-        android:text="Key People"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/key_people_names"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/key_people_text"
+            android:text="Chairman"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/key_people_names"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/key_people_text"
-        android:text="Chairman"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/volunteers_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/key_people_names"
+            android:layout_marginTop="20dp"
+            android:text="Volunteers" />
 
-    <TextView
-        android:id="@+id/volunteers_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/key_people_names"
-        android:layout_marginTop="20dp"
-        android:text="Volunteers" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gaurav, Abhishek, Praveen"
+            android:layout_below="@id/volunteers_text"
+            android:id="@+id/volunteers_names"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gaurav, Abhishek, Praveen"
-        android:layout_below="@id/volunteers_text"
-        android:id="@+id/volunteers_names"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/volunteers_names"
+            android:id="@+id/address_text"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Address"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/volunteers_names"
-        android:id="@+id/address_text"
-        />
-
-    <TextView
-        android:id="@+id/address_in_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/address_text"
-        android:text="Ambedkar Street, Byatarayanapura, Airport Road
+        <TextView
+            android:id="@+id/address_in_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/address_text"
+            android:text="Ambedkar Street, Byatarayanapura, Airport Road
 Bangalore, Karnataka 560092
 India" />
-
 
     <TextView
         android:id="@+id/donated_by"

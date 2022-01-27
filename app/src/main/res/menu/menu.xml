@@ -4,9 +4,15 @@
 
     <item android:title="Share"
         android:id="@+id/share01"
+        android:icon="@drawable/ic_baseline_share_24"
         />
 
-    <item android:title="Add to Wish List"
+    <item android:title="Open in Maps"
+        android:id="@+id/maps"/>
+
+    <item android:title="About us"
         android:id="@+id/add"
         />
+
+
 </menu>

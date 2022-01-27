@@ -23,11 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WishList extends AppCompatActivity {
-    Button b1,b2;
     EditText ed1;
     TextView t1;
     SQLiteDatabase sqLiteDatabase;
-    String FirstHolder,SecondHolder,SqliteQueryBaseHolder;
+    String FirstHolder,SqliteQueryBaseHolder;
     boolean CheckEditText;
 
     SqliteHelper sqliteHelper;
@@ -87,35 +86,32 @@ public class WishList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wish_list);
-        ed1=findViewById(R.id.ed1);
-        LISTVIEW=findViewById(R.id.listview);
-        b1=findViewById(R.id.b1);
-        t1=findViewById(R.id.t1);
-        b2=findViewById(R.id.b2);
+        ed1 = findViewById(R.id.ed1);
+        LISTVIEW = findViewById(R.id.listview);
 
-        Intent intent=getIntent();
-        String name=intent.getStringExtra("wish");
+        t1 = findViewById(R.id.t1);
+
+
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("add");
         t1.setText(name);
 
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        ID_ARRAY=new ArrayList<String>();
+        TITLE_ARRAY=new ArrayList<String>();
+        sqliteHelper=new SqliteHelper(this);
 
-                    SqliteDatabaseBuild();
+        SqliteDatabaseBuild();
 
-                    SqliteTableBuild();
+        SqliteTableBuild();
 
-                    CheckEditTextStatus();
+        CheckEditTextStatus();
 
-                    SqliteInsertData();
+        SqliteInsertData();
 
-                    EmptyEditTextAfterInsert();
+        EmptyEditTextAfterInsert();
 
-                    Intent intent1 = new Intent(WishList.this, MainActivity.class);
-                    startActivity(intent1);
+    }
 
-                    Toast.makeText(WishList.this, "Wishlist Updated", Toast.LENGTH_SHORT).show();
-                }
 
             private void SqliteDatabaseBuild() {
                sqLiteDatabase=openOrCreateDatabase("WishListDataBase", Context.MODE_PRIVATE,null);
@@ -145,7 +141,7 @@ public class WishList extends AppCompatActivity {
                     SqliteQueryBaseHolder="INSERT INTO WishListTable(title) VALUES('"+FirstHolder2+"');";
                     sqLiteDatabase.execSQL(SqliteQueryBaseHolder);
                 }else {
-                    Toast.makeText(WishList.this, "Please fill Name", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(WishList.this, "Please fill Name", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -153,30 +149,4 @@ public class WishList extends AppCompatActivity {
                 ed1.getText().clear();
                 t1.setText("");
             }
-        });
-
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1=new Intent(WishList.this,MainActivity.class);
-                startActivity(intent1);
-
-            }
-        });
-
-        ID_ARRAY=new ArrayList<String>();
-        TITLE_ARRAY=new ArrayList<String>();
-        sqliteHelper=new SqliteHelper(this);
-
-        LISTVIEW.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
-            }
-        });
-
-
-    }
-
-}
+        }

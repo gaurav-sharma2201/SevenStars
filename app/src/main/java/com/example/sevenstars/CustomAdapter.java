@@ -25,7 +25,7 @@ import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
     private ArrayList<GetterSetter> getterSetterArrayList;
-    SQLiteDatabase sqLiteDatabase;
+
 
 
     public CustomAdapter(ArrayList<GetterSetter> getterSetterArrayList1) {
@@ -56,8 +56,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView t1, t2, t3, t4,t5,read_more;
-        Button select;
+        TextView t1, t2, t3, t4,t5;
+        Button select,wishlist;
         ImageView i1,drop_menu;
         private final Context context;
 
@@ -71,7 +71,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             t4=itemView.findViewById(R.id.volunteers_view);
             t5=itemView.findViewById(R.id.address_view);
             select=itemView.findViewById(R.id.select);
-            read_more=itemView.findViewById(R.id.read_more_text);
+            wishlist=itemView.findViewById(R.id.wishlist);
             i1 = itemView.findViewById(R.id.image1);
             drop_menu=itemView.findViewById(R.id.menu);
             context = itemView.getContext();
@@ -111,10 +111,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                                     }
                                     break;
 
-                                case R.id.add:
-                                    intent=new Intent(v.getContext(),WishList.class);
-                                    intent.putExtra("wish",name);
-                                    context.startActivity(intent);
+                                case R.id.maps:
+                                    Intent intent1=new Intent(v.getContext(),Maps_fragment.class);
+                                    intent1.putExtra("location",name);
+                                    context.startActivity(intent1);
+                                    break;
 
 
                             }
@@ -145,11 +146,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 }
              });
 
-            read_more.setOnClickListener(new View.OnClickListener() {
+            wishlist.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(context,Read_more.class);
+                    final Intent intent;
+                    String Name=t1.getText().toString();
+
+                    intent=new Intent(context,WishList.class);
+                    intent.putExtra("add",Name);
+
                     context.startActivity(intent);
+
                 }
             });
         }

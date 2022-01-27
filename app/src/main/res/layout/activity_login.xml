@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Login">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+
         >
 
         <TextView
@@ -24,6 +26,7 @@
 
         <TextView
             android:id="@+id/text2"
+            android:textColor="@color/Light_Gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text1"
@@ -36,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/text2"
+            android:backgroundTint="@color/white"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             app:strokeColor="@color/glowing_blue"
@@ -62,8 +66,10 @@
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/image2"
                     android:gravity="center"
+                    android:textColor="@color/Light_Gray"
+                    android:hint="Phone Number"
                     android:inputType="number"
-                    android:hint="Phone Number" />
+                    android:textColorHint="@color/Light_Gray" />
 
             </RelativeLayout>
 
@@ -74,8 +80,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/card1"
+            android:backgroundTint="@color/teal_700"
             android:layout_centerHorizontal="true"
-            android:text="Send OTP" />
+            android:text="Send OTP"
+            android:textColor="@color/white"/>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card2"
@@ -83,6 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/send_otp"
             android:layout_marginStart="50dp"
+            android:backgroundTint="@color/white"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="50dp"
             app:cardCornerRadius="10dp"
@@ -103,8 +112,9 @@
                     android:backgroundTint="@color/white"
                     android:gravity="center"
                     android:hint="Enter OTP"
+                    android:textColor="@color/Light_Gray"
                     android:inputType="number"
-                    android:textColorHint="@color/material_on_surface_disabled"
+                    android:textColorHint="@color/Light_Gray"
                     android:textSize="14sp" />
 
                 <ImageView
@@ -128,7 +138,8 @@
             android:layout_below="@id/card2"
             android:layout_marginStart="100dp"
             android:layout_marginEnd="80dp"
-            android:backgroundTint="@color/dark_blue"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/light_blue_900"
             android:text="Log In" />
 
         <TextView
@@ -137,6 +148,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/login1"
             android:gravity="center"
+            android:textColor="@color/Light_Gray"
             android:paddingBottom="10dp"
             android:text="Or connect using" />
 
