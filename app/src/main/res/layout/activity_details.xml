@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Light_Gray"
+    android:background="@color/white"
     tools:context=".Details">
 
         <TextView
@@ -13,6 +13,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
+            android:textColor="@color/black"
             android:text="Trust Name"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -24,6 +25,7 @@
             android:layout_below="@id/Name"
             android:layout_marginTop="20dp"
             android:text="Key People"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
@@ -32,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/key_people_text"
             android:text="Chairman"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
@@ -40,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/key_people_names"
             android:layout_marginTop="20dp"
+            android:textColor="@color/black"
             android:text="Volunteers" />
 
         <TextView
@@ -47,6 +51,7 @@
             android:layout_height="wrap_content"
             android:text="Gaurav, Abhishek, Praveen"
             android:layout_below="@id/volunteers_text"
+            android:textColor="@color/black"
             android:id="@+id/volunteers_names"
             />
 
@@ -55,6 +60,7 @@
             android:layout_height="wrap_content"
             android:text="Address"
             android:layout_marginTop="20dp"
+            android:textColor="@color/black"
             android:layout_below="@id/volunteers_names"
             android:id="@+id/address_text"
             />
@@ -63,6 +69,7 @@
             android:id="@+id/address_in_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:layout_below="@id/address_text"
             android:text="Ambedkar Street, Byatarayanapura, Airport Road
 Bangalore, Karnataka 560092
@@ -74,6 +81,7 @@ India" />
         android:layout_height="wrap_content"
         android:layout_below="@id/address_in_details"
         android:layout_marginTop="20dp"
+        android:textColor="@color/black"
         android:text="Donated by"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -82,8 +90,10 @@ India" />
         android:id="@+id/donor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/Gray"
         android:layout_below="@id/donated_by"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/amount"
@@ -92,6 +102,7 @@ India" />
         android:layout_below="@id/donor"
         android:layout_marginTop="20dp"
         android:gravity="center"
+        android:textColor="@color/black"
         android:text="Please enter amount"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -102,6 +113,8 @@ India" />
         android:layout_height="wrap_content"
         android:layout_below="@id/amount"
         android:ems="5"
+        android:backgroundTint="@color/Gray"
+        android:textColor="@color/black"
         android:inputType="number" />
 
     <com.google.android.material.card.MaterialCardView
@@ -109,13 +122,13 @@ India" />
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="20dp"
-        app:cardCornerRadius="30dp"
+        app:cardCornerRadius="20dp"
         android:clickable="true"
-        android:outlineAmbientShadowColor="@color/black"
-        app:strokeWidth="5dp">
+        android:backgroundTint="@color/Orange"
+        android:focusable="true">
 
         <TextView
             android:id="@+id/donate"
@@ -123,6 +136,7 @@ India" />
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="Donate"
+            android:textColor="@color/white"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="30sp"
             android:textStyle="bold" />
