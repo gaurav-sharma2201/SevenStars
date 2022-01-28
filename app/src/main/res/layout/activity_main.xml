@@ -17,11 +17,23 @@
             android:layout_height="match_parent"
             >
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/my_wishlist"
+                android:fontFamily="@font/nunito_italic"
+                android:text="SevenStars"
+                android:textColor="@color/light_blue_900"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="40dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
                 android:id="@+id/card">
 
@@ -38,13 +50,12 @@
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@id/search_button"
                 android:layout_alignBottom="@id/search_button"
-                android:layout_marginStart="15dp"
                 android:layout_toStartOf="@id/search_button"
-                android:layout_toEndOf="@id/card"
                 android:background="@drawable/search_layout"
                 android:backgroundTint="@color/Light_Gray"
                 android:fontFamily="@font/nunito_italic"
                 android:gravity="center"
+                android:layout_below="@id/my_wishlist"
                 android:hint="Search"
                 android:textColorHint="@color/white" />
 
@@ -52,6 +63,7 @@
                 android:id="@+id/search_button"
                 android:layout_width="wrap_content"
                 android:layout_height="32dp"
+                android:layout_below="@id/my_wishlist"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@android:color/transparent"
@@ -62,8 +74,7 @@
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/search_button"
-                android:layout_alignParentEnd="true"
+                android:layout_toStartOf="@id/card"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:backgroundTint="@color/light_blue_900"
@@ -75,7 +86,8 @@
                 android:id="@+id/recycler1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/my_wishlist" />
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/SearchBox" />
 
 
         </RelativeLayout>
@@ -108,6 +120,7 @@
             android:backgroundTint="@color/white"
             android:src="@drawable/ic_round_add_24"
             app:layout_anchor="@id/bottomAppBar"
+            app:fabSize="mini"
             app:maxImageSize="50dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
