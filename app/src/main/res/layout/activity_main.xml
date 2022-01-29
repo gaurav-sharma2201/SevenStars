@@ -21,9 +21,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@id/my_wishlist"
+                android:layout_alignBottom="@id/my_wishlist"
                 android:fontFamily="@font/nunito_italic"
+                android:gravity="center_vertical"
                 android:text="SevenStars"
-                android:textColor="@color/light_blue_900"
+                android:textColor="@color/fade_blue"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -48,16 +50,18 @@
                 android:id="@+id/SearchBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/my_wishlist"
                 android:layout_alignTop="@id/search_button"
-                android:layout_alignBottom="@id/search_button"
+                android:layout_marginStart="20dp"
                 android:layout_toStartOf="@id/search_button"
                 android:background="@drawable/search_layout"
-                android:backgroundTint="@color/Light_Gray"
                 android:fontFamily="@font/nunito_italic"
                 android:gravity="center"
-                android:layout_below="@id/my_wishlist"
                 android:hint="Search"
-                android:textColorHint="@color/white" />
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/Light_Gray" />
 
             <ImageButton
                 android:id="@+id/search_button"
@@ -74,12 +78,13 @@
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toStartOf="@id/card"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:backgroundTint="@color/light_blue_900"
+                android:layout_toStartOf="@id/card"
+                app:strokeColor="@color/light_blue_900"
+                app:strokeWidth="3dp"
                 android:text="Wishlist"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 app:cornerRadius="10dp" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -103,6 +108,7 @@
             app:fabCradleMargin="5dp"
             app:fabCradleRoundedCornerRadius="50dp"
             app:hideOnScroll="true">
+
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNavView"

@@ -98,18 +98,17 @@
             app:strokeColor="@color/Light_Gray" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/wishlist"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_below="@id/image1"
             android:layout_alignParentEnd="true"
             android:text="Add to wishlist"
             android:textAllCaps="false"
             android:textColor="@color/Light_Pink"
-            android:id="@+id/wishlist"
-            app:iconTint="#323A6A"
             app:icon="@drawable/ic_baseline_view_list_24"
-            />
+            app:iconTint="#323A6A" />
 
 
     </RelativeLayout>

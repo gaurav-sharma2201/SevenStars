@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         profileimage = findViewById(R.id.profileimage);
         bottomNavigationView = findViewById(R.id.bottomNavView);
         bottomNavigationView.setBackground(null);
-        //  signout=findViewById(R.id.sign_out);
 
         Button my_wishlist=(Button)findViewById(R.id.my_wishlist);
         my_wishlist.setOnClickListener(new View.OnClickListener() {
@@ -129,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-            private void button(String adapterView, ArrayList data) {
+   private void button(String adapterView, ArrayList data) {
                 if (adapterView.matches("Parvathi Charitable Trust")){
                     String key="Chairman 1";
                     String address="Ambedkar Street, Byatarayanapura, Airport Road,Bangalore, Karnataka 560092";
@@ -214,6 +213,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
         customAdapter=new CustomAdapter(getData());
 
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getApplicationContext());
@@ -221,9 +223,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(customAdapter);
 
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int color=(R.color.white);
 
                 switch (item.getItemId()){
                     case R.id.home:
@@ -233,6 +237,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.account:
+
                         Toast.makeText(MainActivity.this, "Account screen", Toast.LENGTH_SHORT).show();
                         break;
 
@@ -381,10 +386,13 @@ public class MainActivity extends AppCompatActivity {
         return gts;
     }
 
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         finishAffinity();
     }
+
+
 
 }
