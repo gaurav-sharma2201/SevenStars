@@ -1,41 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp"
-    android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     >
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/t4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:cardCornerRadius="10dp"
-        android:backgroundTint="@color/light_blue_900"
-        >
+        android:text="Note title"
+        android:textColor="@color/black"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textSize="25sp"
+        tools:ignore="HardcodedText" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="Trust Name"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:textSize="24sp"
-                android:id="@+id/t4"
-                />
-
-        </RelativeLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-
-
-</RelativeLayout>
+</LinearLayout>

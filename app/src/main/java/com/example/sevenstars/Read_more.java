@@ -21,6 +21,10 @@ public class Read_more extends AppCompatActivity {
         share=findViewById(R.id.share1);
         title=findViewById(R.id.title);
 
+        Intent intent=getIntent();
+        String read_name=intent.getStringExtra("read_name");
+        title.setText(read_name);
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

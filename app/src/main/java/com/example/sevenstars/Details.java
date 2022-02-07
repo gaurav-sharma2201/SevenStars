@@ -54,7 +54,7 @@ public class Details extends AppCompatActivity implements PaymentResultListener 
         donor=findViewById(R.id.donor);
 
 
-        TextView donate = (TextView) findViewById(R.id.donate);
+        Button donate=(Button)findViewById(R.id.donate);
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("Name");

@@ -2,7 +2,9 @@ package com.example.sevenstars;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
+import android.animation.ArgbEvaluator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -19,21 +21,24 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class WishList extends AppCompatActivity {
     EditText ed1;
     TextView t1;
+    ListView LISTVIEW;
     SQLiteDatabase sqLiteDatabase;
     String FirstHolder,SqliteQueryBaseHolder;
     boolean CheckEditText;
+    FloatingActionButton add_lowest;
 
     SqliteHelper sqliteHelper;
     SQLiteDatabase sqLiteDatabase2;
     Cursor cursor;
     CustomListAdapter listAdapter;
-    ListView LISTVIEW;
 
     ArrayList<String> ID_ARRAY;
     ArrayList<String> TITLE_ARRAY;
@@ -86,11 +91,9 @@ public class WishList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wish_list);
+        t1 = findViewById(R.id.t1);
         ed1 = findViewById(R.id.ed1);
         LISTVIEW = findViewById(R.id.listview);
-
-        t1 = findViewById(R.id.t1);
-
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("add");

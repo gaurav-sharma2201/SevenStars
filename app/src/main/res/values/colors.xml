@@ -13,6 +13,7 @@
     <color name="dark_blue">#052CBC</color>
     <color name="fade_blue">#323A6A</color>
     <color name="Navy_Blue_Light">#91D1FD</color>
+    <color name="Navy_blue_light">#91D1FD00</color>
     <color name="Orange">#EA5E00</color>
     <color name="glowing_blue">#0099FF</color>
     <color name="light_blue_600">#FF039BE5</color>
@@ -24,4 +25,11 @@
     <color name="Light_Gray">#D3D3D3</color>
     <color name="Light_Pink">#ECC6B8</color>
     <color name="Green">#05E177</color>
+
+    <color name="color1">#0b0023</color>
+    <color name="color2">#2a0000</color>
+    <color name="color3">#162100</color>
+    <color name="color4">#220022</color>
+    <color name="color5">#000022</color>
+    <color name="gold">#fdce98</color>
 </resources>

@@ -2,16 +2,16 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
     android:backgroundTint="@color/white"
-    app:strokeWidth="2dp"
-    app:strokeColor="@color/fade_blue"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
         >
 
         <TextView
@@ -22,19 +22,19 @@
             android:layout_marginTop="10dp"
             android:layout_toStartOf="@id/menu"
             android:text="Trust Name"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textColor="@color/Gray"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/type"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:layout_marginStart="10dp"
-                android:layout_toStartOf="@id/menu"
-                android:text="TextView"
-                android:layout_below="@id/name"/>
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@id/menu"
+            android:text="TextView"
+            android:textColor="@color/Gray" />
 
 
         <ImageView
@@ -80,7 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="360dp"
             android:layout_below="@id/type"
-            android:scaleType="fitXY" />
+            android:scaleType="centerCrop" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/select"
@@ -88,29 +88,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/image1"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="@color/white"
             android:text="Select"
             android:textColor="@color/Orange"
             android:textStyle="bold"
-            app:iconTint="#323A6A"
-            app:icon="@drawable/ic_baseline_thumb_up_24"
-            android:layout_marginStart="5dp"
             app:cornerRadius="10dp"
+            app:icon="@drawable/ic_baseline_thumb_up_24"
+            app:iconTint="#323A6A"
             app:strokeColor="@color/Light_Gray" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/wishlist"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/image1"
             android:layout_alignParentEnd="true"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="7dp"
             android:text="Add to wishlist"
             android:textAllCaps="false"
-            android:textColor="@color/Light_Pink"
+            android:textColor="@color/Gray"
             app:icon="@drawable/ic_baseline_view_list_24"
             app:iconTint="#323A6A" />
 
-
+        <ImageView
+            android:id="@+id/spacer"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_below="@id/select"
+            android:src="#757575" />
     </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
 

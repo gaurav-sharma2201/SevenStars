@@ -1,48 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".WishList">
-
-    <EditText
-        android:id="@+id/ed1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:visibility="gone"
-        />
 
     <TextView
         android:id="@+id/t1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="name"
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:text="@string/trust_name1"
         android:visibility="gone"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/wishlist_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="WISHLIST"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="24sp" />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/listview"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/wishlist_text"
         />
 
-</RelativeLayout>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed1"
+        android:text="@string/trust_name2"
+        android:visibility="gone"
+        android:autofillHints="auto"
+        android:inputType="text"
+        tools:ignore="LabelFor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="7"
+        android:background="#0C1895"
+        >
+
+        <TextView
+            style="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WISHLIST"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        >
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="7"
+        android:gravity="end"
+        android:background="#0C1895"
+        />
+
+
+
+</LinearLayout>

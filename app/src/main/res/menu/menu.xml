@@ -11,7 +11,7 @@
         android:id="@+id/maps"/>
 
     <item android:title="About us"
-        android:id="@+id/add"
+        android:id="@+id/read_more"
         />
 
 

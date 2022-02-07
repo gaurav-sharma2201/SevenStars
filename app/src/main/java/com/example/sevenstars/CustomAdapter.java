@@ -117,7 +117,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                                     context.startActivity(intent1);
                                     break;
 
-
+                                case R.id.read_more:
+                                    Intent intent2=new Intent(v.getContext(),Read_more.class);
+                                    intent2.putExtra("read_name",name);
+                                    context.startActivity(intent2);
+                                    break;
 
 
                             }
@@ -156,6 +160,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
                     intent=new Intent(context,WishList.class);
                     intent.putExtra("add",Name);
+
+                    Toast.makeText(v.getContext(), "WISHLIST updated", Toast.LENGTH_SHORT).show();
 
                     context.startActivity(intent);
 

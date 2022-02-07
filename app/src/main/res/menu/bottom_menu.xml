@@ -13,10 +13,10 @@
         android:icon="@drawable/ic_baseline_account_circle_24"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/space"
-        android:title=""
+    <item android:id="@+id/search_btn"
+        android:title="Search"
         app:showAsAction="ifRoom"
-        android:enabled="false"/>
+        android:icon="@drawable/ic_baseline_search_24"/>
 
     <item android:id="@+id/help"
         android:title="Help"
@@ -24,9 +24,9 @@
         android:icon="@drawable/ic_baseline_help_outline_24"
         />
 
-    <item android:id="@+id/logout"
-        android:title="Logout"
+    <item android:id="@+id/events"
+        android:title="Activity"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_baseline_power_settings_new_24"
+        android:icon="@drawable/baseline_local_activity_24"
         />
 </menu>
