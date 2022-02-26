@@ -4,29 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/gray1"
     tools:context=".Details">
 
-        <TextView
-            android:id="@+id/Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:text="Trust Name"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Trust Name"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/key_people_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Name"
-            android:layout_marginTop="20dp"
-            android:text="Key People"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/key_people_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Name"
+        android:layout_marginTop="20dp"
+        android:text="Key People"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
         <TextView
             android:id="@+id/key_people_names"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/key_people_text"
             android:text="Chairman"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <TextView
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/key_people_names"
             android:layout_marginTop="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="Volunteers" />
 
         <TextView
@@ -51,29 +51,28 @@
             android:layout_height="wrap_content"
             android:text="Gaurav, Abhishek, Praveen"
             android:layout_below="@id/volunteers_text"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:id="@+id/volunteers_names"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Address"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/black"
-            android:layout_below="@id/volunteers_names"
-            android:id="@+id/address_text"
-            />
+    <TextView
+        android:id="@+id/address_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/volunteers_names"
+        android:layout_marginTop="20dp"
+        android:text="Address"
+        android:textColor="@color/white" />
 
-        <TextView
-            android:id="@+id/address_in_details"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:layout_below="@id/address_text"
-            android:text="Ambedkar Street, Byatarayanapura, Airport Road
+    <TextView
+        android:id="@+id/address_in_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/address_text"
+        android:text="Ambedkar Street, Byatarayanapura, Airport Road
 Bangalore, Karnataka 560092
-India" />
+India"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/donated_by"
@@ -81,8 +80,9 @@ India" />
         android:layout_height="wrap_content"
         android:layout_below="@id/address_in_details"
         android:layout_marginTop="20dp"
-        android:textColor="@color/black"
         android:text="Donated by"
+        android:visibility="gone"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -90,20 +90,21 @@ India" />
         android:id="@+id/donor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/Gray"
         android:layout_below="@id/donated_by"
+        android:backgroundTint="@color/Gray"
         android:inputType="textPersonName"
-        android:textColor="@color/black" />
+        android:visibility="gone"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/donor"
+        android:layout_below="@id/address_in_details"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:textColor="@color/black"
         android:text="Please enter amount"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -112,10 +113,12 @@ India" />
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/amount"
+        android:backgroundTint="@color/white"
         android:ems="5"
-        android:backgroundTint="@color/Gray"
+        android:inputType="number"
+        android:minHeight="48dp"
         android:textColor="@color/black"
-        android:inputType="number" />
+        android:textColorHint="@color/white" />
 
 
     <com.google.android.material.button.MaterialButton

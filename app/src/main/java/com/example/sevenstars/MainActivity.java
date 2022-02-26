@@ -2,54 +2,39 @@ package com.example.sevenstars;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
-import android.animation.ArgbEvaluator;
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.webkit.URLUtil;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.MediaController;
-import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String BUNDLE_RECYCLER_LAYOUT = "classname.recycler.layout";
 
     RecyclerView recyclerView;
     CustomAdapter customAdapter;
@@ -57,6 +42,19 @@ public class MainActivity extends AppCompatActivity {
     ImageView profileimage;
     BottomNavigationView bottomNavigationView;
 
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Parcelable savedRecyclerLayoutState = savedInstanceState.getParcelable(BUNDLE_RECYCLER_LAYOUT);
+        Objects.requireNonNull(recyclerView.getLayoutManager()).onRestoreInstanceState(savedRecyclerLayoutState);
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(BUNDLE_RECYCLER_LAYOUT, Objects.requireNonNull(recyclerView.getLayoutManager()).onSaveInstanceState());
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,21 +65,24 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavView);
         bottomNavigationView.setBackground(null);
 
-        if (Build.VERSION.SDK_INT >= 21) {
+
+
+
+
             Window window = this.getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.setNavigationBarColor(this.getResources().getColor(R.color.black));
-        }
 
-        Button my_wishlist=(Button)findViewById(R.id.my_wishlist);
-        my_wishlist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,WishList.class);
-                startActivity(intent);
-            }
-        });
+
+//        Button my_wishlist=(Button)findViewById(R.id.my_wishlist);
+//        my_wishlist.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent(MainActivity.this,WishList.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -131,18 +132,20 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.account:
 
-                        Intent intent=new Intent(getApplicationContext(), com.example.sevenstars.account.class);
-
+                        Intent intent=new Intent(MainActivity.this,account.class);
                         startActivity(intent);
-
                         break;
 
                     case R.id.search_btn:
+
                         Intent intent1=new Intent(MainActivity.this,Search.class);
                         startActivity(intent1);
+                        break;
 
-                    case R.id.help:
-                        Toast.makeText(MainActivity.this, "Help screen", Toast.LENGTH_SHORT).show();
+                    case R.id.my_list:
+
+                        Intent intent2=new Intent(MainActivity.this,Wishlist_Activity_sample.class);
+                        startActivity(intent2);
                         break;
 
                     case R.id.events:
@@ -157,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private ArrayList<GetterSetter> getData()
+      private ArrayList<GetterSetter> getData()
 
     {
     ArrayList<GetterSetter> gts=new ArrayList<>();
@@ -274,7 +277,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finishAffinity();
+
+        if (findViewById(R.id.frameLayout).isOpaque()){
+            Toast.makeText(MainActivity.this, "Close", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            finishAffinity();
+        }
+
     }
 
 

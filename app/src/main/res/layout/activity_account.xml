@@ -1,199 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".account">
+    android:background="@color/gray1"
+    tools:context=".account"
+    >
 
     <RelativeLayout
+        android:id="@+id/home_screen"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:background="#0C1895"
-        >
+        android:layout_height="wrap_content"
+        android:elevation="29.92dp">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/logo1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/black"
-                android:layout_marginBottom="5dp"
-                app:cardCornerRadius="120dp">
-
-                <ImageView
-                    android:id="@+id/profileimage1"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_baseline_account_circle_24"
-                    android:contentDescription="@string/profile_set" />
-
-            </androidx.cardview.widget.CardView>
+        <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24" />
 
         <TextView
-            android:id="@+id/ProfileName"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/back_arrow"
+            android:fontFamily="@font/new_font"
+            android:gravity="center_vertical"
+            android:text="My Account"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/rectangle_1"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_below="@id/back_arrow"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:elevation="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rectangle_2">
+
+            <ImageView
+                android:id="@+id/profileimage1"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_baseline_account_circle_24" />
+
+            <TextView
+                android:id="@+id/ProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/profileimage1"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/profileimage1"
+                android:text="Name"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:translationY="-0.07sp" />
+
+            <TextView
+                android:id="@+id/email_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ProfileName"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/profileimage1"
+                android:text="Email"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:translationY="-0.07sp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/donation_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignTop="@id/donationsbtn"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/donation_icon" />
+
+        <TextView
+            android:id="@+id/donationsbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/logo1"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/profile_name"
+            android:layout_below="@id/rectangle_1"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_toEndOf="@id/donation_icon"
+            android:shadowDx="@integer/config_navAnimTime"
+            android:shadowDy="@integer/config_navAnimTime"
+            android:shadowRadius="10"
+            android:text="Donations"
             android:textColor="@color/white"
             android:textSize="25sp" />
 
-    </RelativeLayout>
+        <ImageView
+            android:id="@+id/spacer"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/donation_icon"
+            android:layout_marginTop="20dp"
+            android:src="#757575" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        >
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="95dp"
-                android:layout_height="90dp"
-                app:cardBackgroundColor="#0C1895"
-                app:cardCornerRadius="20dp"
-                android:layout_marginTop="40dp"
-                android:layout_toStartOf="@id/card2"
-                android:layout_marginEnd="20dp"
-                android:id="@+id/card1">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/ic_baseline_settings_24"
-                        android:id="@+id/settings_img"
-                        android:contentDescription="@string/action_settings" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/settings"
-                        android:layout_gravity="center"
-                        android:textSize="16sp"
-                        android:textColor="@color/white"
-                        />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                app:cardBackgroundColor="#0C1895"
-                app:cardCornerRadius="20dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="40dp"
-                android:id="@+id/card2">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/ic_baseline_payment_24"
-                        android:id="@+id/donations"
-                        android:contentDescription="@string/donations" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/donations"
-                        android:layout_gravity="center"
-                        android:textSize="16sp"
-                        android:textColor="@color/white"
-                        />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="95dp"
-            android:layout_height="95dp"
-            app:cardBackgroundColor="#0C1895"
-            app:cardCornerRadius="20dp"
-            android:layout_toEndOf="@id/card2"
+        <ImageView
+            android:id="@+id/signout"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/spacer"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="40dp"
-            android:id="@+id/card3">
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_baseline_logout_24" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/notifications"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/ic_baseline_notifications_24"
-                    android:contentDescription="@string/logout" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/notifications"
-                    android:text="Notifications"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-            </RelativeLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            app:cardBackgroundColor="#0C1895"
-            app:cardCornerRadius="20dp"
-            android:layout_below="@id/card2"
-            android:layout_alignStart="@id/card2"
-            android:layout_marginTop="40dp"
+        <TextView
+            android:id="@+id/logout_btn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/signout"
+            android:layout_toEndOf="@id/signout"
             android:onClick="logout_btn"
-            android:id="@+id/card4">
+            android:text="Logout"
+            android:textSize="20sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:backgroundTint="@color/white"
-                    android:background="@drawable/ic_baseline_power_settings_new_24"
-                    android:id="@+id/logout"
-                    android:contentDescription="@string/notifications" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/logout"
-                    android:layout_gravity="center"
-                    android:textSize="16sp"
-                    android:textColor="@color/white"
-                    />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
+        <ImageView
+            android:id="@+id/spacer2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/signout"
+            android:layout_marginTop="20dp"
+            android:src="#757575" />
 
     </RelativeLayout>
 
-
-</LinearLayout>
+</RelativeLayout>

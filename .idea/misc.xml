@@ -9,9 +9,11 @@
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/backg1.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/background.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/background1.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/baseline_local_activity_24.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_help_outline_24.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.20052083333333334" />
@@ -33,10 +35,11 @@
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_round_add_24.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/search_layout.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/serach_layout.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/layout-v28/activity_account.xml" value="0.184375" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/layout-v28/activity_main.xml" value="0.184375" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.226171875" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/layout-w936dp/activity_login.xml" value="0.13828125" />
-        <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_account.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_account.xml" value="0.22" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_create_account.xml" value="0.22" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_details.xml" value="0.22" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_go_to_website.xml" value="0.184375" />
@@ -86,6 +89,49 @@
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14947916666666666" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/MUSIC/AndroidStudioProjects/SevenStars/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round2.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/baseline_local_activity_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/bg3.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/black_white_gradient.xml" value="0.16885964912280702" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/button.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/control_men.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/control_men1.xml" value="0.16885964912280702" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/cover.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/home_screen.xml" value="0.22" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.16885964912280702" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_groups_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_help_outline_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/ic_baseline_payment_24.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/iphone_13_1.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/rectangle_2.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/search_layout.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/small_butto.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/drawable/title_profi.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_account.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_account_fullscreen.xml" value="0.16485507246376813" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_account_page.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_details.xml" value="0.22" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_login.xml" value="0.15896739130434784" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_maps_fragment.xml" value="0.184375" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_read_more.xml" value="0.184375" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_search.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_splash_screen.xml" value="0.15526315789473685" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_wish_list.xml" value="0.1358695652173913" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/activity_wishlist_sample.xml" value="0.22" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/fragment_search.xml" value="0.15526315789473685" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/item.xml" value="0.17255434782608695" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/raw.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/raw_items.xml" value="0.22" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/layout/sample_layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/MUSIC/Desktop/Android projects/AndroidStudioProjects/SevenStars/app/src/main/res/menu/bottom_menu.xml" value="0.22" />
       </map>
     </option>
   </component>

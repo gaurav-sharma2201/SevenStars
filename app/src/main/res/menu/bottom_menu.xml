@@ -18,14 +18,14 @@
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_baseline_search_24"/>
 
-    <item android:id="@+id/help"
-        android:title="Help"
+    <item android:id="@+id/my_list"
+        android:title="My list"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_baseline_help_outline_24"
+        android:icon="@drawable/ic_baseline_add_24"
         />
 
     <item android:id="@+id/events"
-        android:title="Activity"
+        android:title="Events"
         app:showAsAction="ifRoom"
         android:icon="@drawable/baseline_local_activity_24"
         />

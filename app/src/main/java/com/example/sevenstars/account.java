@@ -31,9 +31,9 @@ public class account extends AppCompatActivity {
     TextView personName;
     ImageView personPhoto1;
     GoogleSignInClient mGoogleSignInClient;
-    CardView cardView;
 
-
+    ImageView back_arrow;
+    TextView donationsbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,25 @@ public class account extends AppCompatActivity {
         setContentView(R.layout.activity_account);
         personName=findViewById(R.id.ProfileName);
         personPhoto1=findViewById(R.id.profileimage1);
-        cardView=findViewById(R.id.card4);
+        donationsbtn=findViewById(R.id.donationsbtn);
+
+
+
+        back_arrow=findViewById(R.id.back_arrow);
+        back_arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(account.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        donationsbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(account.this, "Donations Activity", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -61,18 +79,21 @@ public class account extends AppCompatActivity {
             TextView star=(TextView)findViewById(R.id.ProfileName);
             star.setText(personName);
 
+            TextView email=(TextView) findViewById(R.id.email_text);
+            email.setText(personEmail);
+
             Glide.with(this).load(personPhoto).into(personPhoto1);
 
         } else {
 
         }
 
-        if (Build.VERSION.SDK_INT >= 21) {
+
             Window window = this.getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.setNavigationBarColor(this.getResources().getColor(R.color.black));
-        }
+
     }
 
     public void logout_btn(View view) {

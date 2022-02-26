@@ -1,10 +1,7 @@
 package com.example.sevenstars;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 
-import android.animation.ArgbEvaluator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -12,23 +9,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class WishList extends AppCompatActivity {
+public class Wishlist_Activity_sample extends AppCompatActivity {
+
     TextView t1;
     ListView LISTVIEW;
+
     SQLiteDatabase sqLiteDatabase;
     String FirstHolder,SqliteQueryBaseHolder;
     boolean CheckEditText;
@@ -48,18 +38,17 @@ public class WishList extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         ShowSQLiteDBdata();
-
     }
 
     @SuppressLint("Range")
     private void ShowSQLiteDBdata() {
+
         sqLiteDatabase2=sqliteHelper.getWritableDatabase();
 
         cursor=sqLiteDatabase2.rawQuery("SELECT * FROM " +SqliteHelper.TABLE_NAME+ "",null);
 
         ID_ARRAY.clear();
         TITLE_ARRAY.clear();
-
 
         if (cursor.moveToFirst()){
             do {
@@ -72,9 +61,10 @@ public class WishList extends AppCompatActivity {
 
             }while (cursor.moveToNext());
 
-            listAdapter=new CustomListAdapter(WishList.this,ID_ARRAY,TITLE_ARRAY);
+            listAdapter=new CustomListAdapter(Wishlist_Activity_sample.this,ID_ARRAY,TITLE_ARRAY);
 
             listAdapter.notifyDataSetChanged();
+          //  LISTVIEW.setBackgroundColor(this.getResources().getColor(R.color.white));
             LISTVIEW.setAdapter(listAdapter);
             cursor.close();
 
@@ -84,7 +74,8 @@ public class WishList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wish_list);
+        setContentView(R.layout.activity_wishlist_sample);
+
         t1 = findViewById(R.id.t1);
         LISTVIEW = findViewById(R.id.listview);
 
@@ -109,22 +100,19 @@ public class WishList extends AppCompatActivity {
         SqliteInsertData();
 
         EmptyEditTextAfterInsert();
-
     }
 
-//
-            private void SqliteDatabaseBuild() {
-               sqLiteDatabase=openOrCreateDatabase("WishListDataBase", Context.MODE_PRIVATE,null);
-            }
+    private void SqliteDatabaseBuild() {
+        sqLiteDatabase=openOrCreateDatabase("WishListDataBase", Context.MODE_PRIVATE,null);
+    }
 
-            private void SqliteTableBuild() {
-                sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + "WishListTable(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,title VARCHAR);");
-            }
+    private void SqliteTableBuild() {
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + "WishListTable(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,title VARCHAR);");
+    }
 
-            private void CheckEditTextStatus() {
-                FirstHolder=t1.getText().toString();
+    private void CheckEditTextStatus() {
 
-
+        FirstHolder=t1.getText().toString();
 
                 if (TextUtils.isEmpty(FirstHolder)){
                     CheckEditText=false;
@@ -132,11 +120,12 @@ public class WishList extends AppCompatActivity {
                 else {
                     CheckEditText=true;
                 }
-            }
 
-            private void SqliteInsertData() {
-                FirstHolder=t1.getText().toString();
+    }
 
+    private void SqliteInsertData() {
+
+        FirstHolder=t1.getText().toString();
 
                 String FirstHolder2=FirstHolder.replace("'","''");
 
@@ -149,10 +138,10 @@ public class WishList extends AppCompatActivity {
                 }else {
 
                 }
-            }
 
-            private void EmptyEditTextAfterInsert() {
-                t1.setText("");
+    }
 
-            }
-        }
+    private void EmptyEditTextAfterInsert() {
+        t1.setText("");
+    }
+}

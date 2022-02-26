@@ -15,4 +15,18 @@
         <item name="android:background">#FFFFFF</item>
         <item name="android:backgroundTint">#FFFFFF</item>
     </style>
+
+    <style name="ready_to_st">ready_to_st>
+        <item name="android:textSize">
+            20sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.02
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+    </style>
 </resources>

@@ -25,11 +25,12 @@
     <color name="Light_Gray">#D3D3D3</color>
     <color name="Light_Pink">#ECC6B8</color>
     <color name="Green">#05E177</color>
-
+    <color name="Blue_shade1">#0C189F</color>
     <color name="color1">#0b0023</color>
     <color name="color2">#2a0000</color>
     <color name="color3">#162100</color>
     <color name="color4">#220022</color>
     <color name="color5">#000022</color>
     <color name="gold">#fdce98</color>
+    <color name="gray1">#212121</color>
 </resources>

@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/gray1"
     android:orientation="vertical"
     >
 
     <TextView
         android:id="@+id/t4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Note title"
-        android:textColor="@color/black"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:textSize="25sp"
+        android:text="Trust Name"
+        android:textColor="@color/white"
+        android:paddingTop="20dp"
+        android:textSize="18sp"
+        android:gravity="bottom"
         tools:ignore="HardcodedText" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/spacer"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/t4"
+        android:src="#757575" />
+
+
+</RelativeLayout>

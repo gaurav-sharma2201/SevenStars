@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/gray1"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -16,17 +16,7 @@
             android:id="@+id/relative1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white">
-
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:backgroundTint="@color/white"
-                app:cardCornerRadius="10dp">
+            android:background="@color/gray1">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -80,6 +70,7 @@
                             android:id="@+id/ProfileImage"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
+                            android:visibility="gone"
                             android:contentDescription="@string/profile_set"
                             tools:ignore="ImageContrastCheck" />
                     </androidx.cardview.widget.CardView>
@@ -113,24 +104,42 @@
                         android:textColor="#262626"
                         android:visibility="gone" />
 
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/n1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        app:cardCornerRadius="40dp">
+
+                    <ImageView
+                        android:id="@+id/notification"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@color/black"
+                        android:src="@drawable/ic_baseline_notifications_24" />
+
+                    </androidx.cardview.widget.CardView>
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/my_wishlist"
                         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:visibility="gone"
                         android:layout_toStartOf="@id/card"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@string/wishlist"
-                        android:textColor="@color/black"
+                        android:backgroundTint="@color/white"
+                        android:text="Wishlist"
+                        android:textColor="@color/gray1"
+                        android:textStyle="bold"
                         app:cornerRadius="10dp"
-                        app:strokeColor="@color/Navy_Blue_Light"
-                         />
+                        app:strokeColor="@color/Light_Gray" />
 
                 </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 
@@ -147,9 +156,9 @@
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
         android:layout_gravity="bottom"
         app:fabCradleMargin="10dp"
+        android:backgroundTint="@color/gray1"
         app:fabCradleRoundedCornerRadius="50dp"
         >
 
@@ -159,12 +168,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
-            app:itemIconTint="@color/fade_blue"
-            app:itemTextColor="@color/black"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
             android:background="@android:color/transparent"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_menu" />
     </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_gravity="bottom"
+        android:id="@+id/frameLayout"
+        >
+    </FrameLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

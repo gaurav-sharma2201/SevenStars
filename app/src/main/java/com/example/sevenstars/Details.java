@@ -38,6 +38,14 @@ public class Details extends AppCompatActivity implements PaymentResultListener 
     String trust_name,Rupees;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent=new Intent(Details.this,MainActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
@@ -130,6 +138,9 @@ public class Details extends AppCompatActivity implements PaymentResultListener 
     public void onPaymentSuccess(String s) {
         Rupees=INR1.getText().toString();
         addDataToFirestore(trust_name,Rupees);
+
+        Intent intent=new Intent(Details.this,MainActivity.class);
+        startActivity(intent);
 
         Toast.makeText(Details.this, "Payment Successful", Toast.LENGTH_SHORT).show();
     }

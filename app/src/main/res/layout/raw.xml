@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/white"
+    android:backgroundTint="@color/gray1"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     >
@@ -10,8 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:background="@color/white"
+        android:backgroundTint="@color/gray1"
+        android:background="@color/gray1"
         >
 
         <TextView
@@ -88,10 +88,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/image1"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="7dp"
             android:layout_marginBottom="7dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/gray1"
             android:text="Select"
             android:textColor="@color/Orange"
             android:textStyle="bold"

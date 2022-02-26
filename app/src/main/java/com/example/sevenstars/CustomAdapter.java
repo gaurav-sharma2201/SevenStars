@@ -59,6 +59,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         TextView t1, t2, t3, t4,t5;
         Button select,wishlist;
         ImageView i1,drop_menu;
+       // private final Context context;
         private final Context context;
 
 
@@ -157,11 +158,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 public void onClick(View v) {
                     final Intent intent;
                     String Name=t1.getText().toString();
+                    String Type=t3.getText().toString();
 
-                    intent=new Intent(context,WishList.class);
+                    intent=new Intent(context,Wishlist_Activity_sample.class);
                     intent.putExtra("add",Name);
-
-                    Toast.makeText(v.getContext(), "WISHLIST updated", Toast.LENGTH_SHORT).show();
+                    intent.putExtra("type",Type);
 
                     context.startActivity(intent);
 

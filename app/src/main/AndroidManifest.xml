@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.sevenstars">
+    package="com.example.sevenstars" >
+
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -17,7 +18,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SevenStars">
+        android:theme="@style/Theme.SevenStars" >
+        <activity
+            android:name=".Splash_screen"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="@string/title_activity_splash_screen"
+            android:theme="@style/Theme.SevenStars.Fullscreen" />
+        <activity
+            android:name=".Wishlist_Activity_sample"
+            android:exported="true" />
         <activity
             android:name=".Search"
             android:exported="true" />
@@ -48,17 +58,13 @@
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".Login"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Splash_Screen"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="true" />
         <activity
             android:name=".Details"
             android:exported="true" />
@@ -68,7 +74,7 @@
 
         <receiver
             android:name="com.razorpay.RzpTokenReceiver"
-            android:exported="false">
+            android:exported="false" >
             <intent-filter>
                 <action android:name="rzp.device_token.share" />
             </intent-filter>
@@ -79,7 +85,7 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:theme="@style/CheckoutTheme"
-            tools:ignore="Instantiatable">
+            tools:ignore="Instantiatable" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

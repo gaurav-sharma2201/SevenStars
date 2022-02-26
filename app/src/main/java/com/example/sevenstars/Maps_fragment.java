@@ -39,7 +39,7 @@ public class Maps_fragment extends FragmentActivity implements OnMapReadyCallbac
 //        Intent intent=getIntent();
 //        String location=intent.getStringExtra("location");
 
-            LatLng trust_loc = new LatLng(13.066509,  77.592536);
+            LatLng trust_loc = new LatLng(22.973423,  78.656891);
             map.addMarker(new MarkerOptions().position(trust_loc).title("Demo_API"));
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(trust_loc,15));
 

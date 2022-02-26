@@ -54,4 +54,6 @@
     <string name="settings">Settings</string>
     <string name="notifications">Notifications</string>
     <string name="logout">Logout</string>
+    <string name="title_activity_account_fullscreen">Account_Fullscreen</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

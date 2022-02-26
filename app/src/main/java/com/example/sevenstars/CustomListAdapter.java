@@ -16,11 +16,13 @@ public class CustomListAdapter extends BaseAdapter {
     Context context;
     ArrayList<String> ID;
     ArrayList<String> Title;
+    ArrayList<String> Type;
 
     public CustomListAdapter(Context  context1, ArrayList<String> id_array, ArrayList<String> title_array) {
         this.context=context1;
         this.ID=id_array;
         this.Title=title_array;
+
     }
 
     @Override
@@ -51,7 +53,9 @@ public class CustomListAdapter extends BaseAdapter {
 
             holder=new Holder();
 
+
             holder.Title=convertView.findViewById(R.id.t4);
+
 
             convertView.setTag(holder);
 
@@ -62,10 +66,13 @@ public class CustomListAdapter extends BaseAdapter {
 
         holder.Title.setText(Title.get(position));
 
+
         return convertView;
     }
 
     public static class Holder {
+
         TextView Title;
+
     }
 }

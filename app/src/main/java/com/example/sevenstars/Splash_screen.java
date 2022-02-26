@@ -12,7 +12,6 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowInsets;
-import android.view.WindowManager;
 
 import com.example.sevenstars.databinding.ActivitySplashScreenBinding;
 
@@ -20,14 +19,12 @@ import com.example.sevenstars.databinding.ActivitySplashScreenBinding;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class Splash_Screen extends AppCompatActivity {
+public class Splash_screen extends AppCompatActivity {
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
      */
     private static final boolean AUTO_HIDE = true;
-    private static int SPLASH_SCREEN_TIME_OUT=2000;
-
 
     /**
      * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
@@ -40,7 +37,6 @@ public class Splash_Screen extends AppCompatActivity {
      * and a change of the status and navigation bar.
      */
     private static final int UI_ANIMATION_DELAY = 300;
-
     private final Handler mHideHandler = new Handler();
     private View mContentView;
     private final Runnable mHidePart2Runnable = new Runnable() {
@@ -55,12 +51,12 @@ public class Splash_Screen extends AppCompatActivity {
                 // Note that some of these constants are new as of API 16 (Jelly Bean)
                 // and API 19 (KitKat). It is safe to use them, as they are inlined
                 // at compile-time and do nothing on earlier devices.
-//                mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
-//                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-//                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-//                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-//                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-//                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+                mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
             }
         }
     };
@@ -69,11 +65,13 @@ public class Splash_Screen extends AppCompatActivity {
         @Override
         public void run() {
             // Delayed display of UI elements
-            ActionBar actionBar = getSupportActionBar();
-            if (actionBar != null) {
-                actionBar.show();
-            }
-            mControlsView.setVisibility(View.VISIBLE);
+            Intent intent=new Intent(Splash_screen.this,Login.class);
+            startActivity(intent);
+//            ActionBar actionBar = getSupportActionBar();
+//            if (actionBar != null) {
+//                actionBar.show();
+//            }
+//            mControlsView.setVisibility(View.VISIBLE);
         }
     };
     private boolean mVisible;
@@ -115,33 +113,22 @@ public class Splash_Screen extends AppCompatActivity {
         binding = ActivitySplashScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent=new Intent(Splash_Screen.this,Login.class);
-                startActivity(intent);
-                finish();
-            }
-        },SPLASH_SCREEN_TIME_OUT);
-
         mVisible = true;
         mControlsView = binding.fullscreenContentControls;
-       // mContentView = binding.fullscreenContent;
+        mContentView = binding.fullscreenContent;
 
         // Set up the user interaction to manually show or hide the system UI.
-//        mContentView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                toggle();
-//            }
-//        });
+        mContentView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toggle();
+            }
+        });
 
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-       // binding.dummyButton.setOnTouchListener(mDelayHideTouchListener);
+        binding.dummyButton.setOnTouchListener(mDelayHideTouchListener);
     }
 
     @Override

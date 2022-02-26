@@ -16,6 +16,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_COLUMN_TITLE="title";
 
+
     public SqliteHelper(@Nullable Context context){
         super(context,DATABASE_NAME,null,1);
 
