@@ -90,7 +90,7 @@ public class Details extends AppCompatActivity implements PaymentResultListener 
                 String green="#05E177";
                 int greenInt=Color.parseColor(green);
 
-                if (TextUtils.isEmpty(amount) || TextUtils.isEmpty(name)){
+                if (TextUtils.isEmpty(amount)){
 
                     donate.setTextColor(whiteInt);
                     donate.setBackgroundColor(grayInt);

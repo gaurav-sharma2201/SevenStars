@@ -66,26 +66,13 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setBackground(null);
 
 
-
-
-
             Window window = this.getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.setNavigationBarColor(this.getResources().getColor(R.color.black));
 
 
-//        Button my_wishlist=(Button)findViewById(R.id.my_wishlist);
-//        my_wishlist.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent=new Intent(MainActivity.this,WishList.class);
-//                startActivity(intent);
-//            }
-//        });
-
-
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
@@ -278,15 +265,6 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
 
-        if (findViewById(R.id.frameLayout).isOpaque()){
-            Toast.makeText(MainActivity.this, "Close", Toast.LENGTH_SHORT).show();
-        }
-        else {
             finishAffinity();
         }
-
-    }
-
-
-
 }
